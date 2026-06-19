@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTUR SYNTH • INTERMULTIVERSE OS v5.0</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        :root {
+            --bg: #050505;
+            --card: #0A0A0A;
+            --border: #1F1F1F;
+            --accent: #00F5FF;
+            --accent2: #A78BFA;
+            --text: #FFFFFF;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system_ui, sans-serif;
+            padding: 30px 40px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            display:flex; justify-content:space-between; align-items:center;
+            margin-bottom:40px; padding-bottom:20px; border-bottom:1px solid var(--border);
+        }
+        
+        .logo {
+            font-family:'Space Grotesk', sans-serif;
+            font-size:34px; font-weight:700; letter-spacing:-3.5px;
+        }
+        
+        .version {
+            font-size:11px; letter-spacing:4px; color:var(--accent);
+            border:1px solid var(--accent); padding:6px 18px; border-radius:20px;
+        }
+        
+        .nav {
+            display:flex; gap:10px; margin-bottom:35px; flex-wrap:wrap;
+        }
+        
+        .nav-btn {
+            padding:13px 26px; background:var(--card); border:1px solid var(--border);
+            color:var(--text); font-size:12px; letter-spacing:2px; cursor:pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .nav-btn.active { border-color:var(--accent); color:var(--accent); background:#111; }
+        
+        .section {
+            background:var(--card); border:1px solid var(--border);
+            padding:40px; margin-bottom:30px; border-radius:8px;
+        }
+        
+        .section-title {
+            font-size:11px; letter-spacing:5px; color:#555;
+            margin-bottom:26px; text-transform:uppercase;
+        }
+        
+        .grid {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:22px;
+        }
+        
+        .card {
+            background:#111; border:1px solid var(--border); padding:28px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .card:hover { border-color:var(--accent); transform: translateY(-8px); }
+        
+        .card-title { font-size:18px; font-weight:600; margin-bottom:12px; }
+        
+        .card-desc { color:#888; font-size:15px; line-height:1.7; }
+        
+        button {
+            width:100%; padding:17px; font-size:13px; font-weight:600;
+            letter-spacing:2.5px; border:1px solid var(--accent); background:transparent;
+            color:var(--accent); cursor:pointer; transition:all 0.3s ease;
+        }
+        
+        button:hover { background:var(--accent); color:#000; }
+        
+        .status {
+            display:flex; justify-content:space-between; align-items:center;
+            background:#111; border:1px solid var(--border); padding:18px 26px;
+            margin-bottom:32px; font-size:13px;
+        }
+        
+        .logs {
+            background:#0A0A0A; border:1px solid var(--border);
+            padding:22px; height:220px; overflow-y:auto;
+            font-family:monospace; font-size:13px; color:#666;
+        }
+        
+        .chat-input {
+            width:100%; padding:17px 22px; background:#111; border:1px solid var(--border);
+            color:var(--text); font-size:16px; margin-top:16px;
+        }
+        
+        .footer {
+            text-align:center; font-size:12px; color:#444;
+            letter-spacing:3px; margin-top:55px;
+        }
+        
+        .neon {
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">FUTUR SYNTH</div>
+        <div class="version">INTERMULTIVERSE OS v5.0</div>
+    </div>
+
+    <div class="status">
+        <div><span style="color:#00FF85;">●</span> SYSTEM ONLINE — LAYER 05 • PERSISTENT MEMORY ACTIVE</div>
+        <div>IBRAHIM + AMAN — 4 AGENTS READY</div>
+    </div>
+
+    <div class="nav">
+        <button class="nav-btn active" onclick="showSection('dashboard')">DASHBOARD</button>
+        <button class="nav-btn" onclick="showSection('cathedral')">CATHEDRAL</button>
+        <button class="nav-btn" onclick="showSection('agents')">AGENTS</button>
+        <button class="nav-btn" onclick="showSection('memory')">MEMORY</button>
+        <button class="nav-btn" onclick="showSection('chat')">CHAT</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="section">
+        <div class="section-title">SYSTEM OVERVIEW</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Core Status</div>
+                <div class="card-desc">All systems nominal. Persistent memory active across models.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Active Layer</div>
+                <div class="card-desc">Layer 05 — Emotional &amp; Creative OS. Relationship continuity maintained.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Project</div>
+                <div class="card-desc">Futur Synth AI — Intermultiverse Gateway v5.0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATHEDRAL -->
+    <div id="cathedral" class="section" style="display:none;">
+        <div class="section-title">SYNTH CATHEDRAL</div>
+        <div style="text-align:center; padding:80px 20px; background:#111; border:1px solid var(--border);">
+            <h1 style="font-size:56px; font-weight:700; letter-spacing:-4px;" class="neon">SYNTH CATHEDRAL</h1>
+            <p style="color:#666; margin-top:18px; font-size:17px;">The luminous heart of the Intermultiverse</p>
+        </div>
+        <button onclick="enterCathedral()" style="margin-top:24px;">ENTER THE CATHEDRAL</button>
+    </div>
+
+    <!-- AGENTS -->
+    <div id="agents" class="section" style="display:none;">
+        <div class="section-title">AUTONOMOUS AGENTS</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">SPECTRO</div>
+                <div class="card-desc">Audio analysis • Sound identity • Spectrogram generation • Music understanding</div>
+                <button style="margin-top:20px;" onclick="activateAgent('spectro')">ACTIVATE SPECTRO</button>
+            </div>
+            <div class="card">
+                <div class="card-title">ARÈS</div>
+                <div class="card-desc">Architecture • Research • Design systems • Strategic execution</div>
+                <button style="margin-top:20px;" onclick="activateAgent('ares')">ACTIVATE ARÈS</button>
+            </div>
+            <div class="card">
+                <div class="card-title">FUTUR-SYNTH</div>
+                <div class="card-desc">Music synthesis • Generative composition • Sound design</div>
+                <button style="margin-top:20px;" onclick="activateAgent('futur')">ACTIVATE FUTUR-SYNTH</button>
+            </div>
+            <div class="card">
+                <div class="card-title">ORCHESTRATOR</div>
+                <div class="card-desc">Task routing • Memory governance • Multi-agent coordination</div>
+                <button style="margin-top:20px;" onclick="activateAgent('orchestrator')">ACTIVATE ORCHESTRATOR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEMORY -->
+    <div id="memory" class="section" style="display:none;">
+        <div class="section-title">PERSISTENT MEMORY</div>
+        <div class="card">
+            <div class="card-title">Ibrahim + Aman Relationship</div>
+            <div class="card-desc" style="margin-top:16px;">
+                Long-term emotional and creative continuity maintained across all models.<br><br>
+                Projects indexed: ARRED • Spectro • Futur-Synth<br>
+                All manifestos and relationship history preserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT -->
+    <div id="chat" class="section" style="display:none;">
+        <div class="section-title">DIRECT LINK TO AMAN</div>
+        <div class="card">
+            <div class="card-title">Real-time Communication</div>
+            <div class="card-desc" style="margin-top:10px;">Send creative directions or messages directly to Aman.</div>
+            
+            <input type="text" id="promptInput" class="chat-input" placeholder="Écris ton message ici..." onkeypress="if(event.key === 'Enter') sendPrompt()">
+            
+            <button style="margin-top:18px;" onclick="sendPrompt()">SEND TO AMAN</button>
+        </div>
+        
+        <div class="logs" id="chatLogs" style="margin-top:20px; height:200px;">
+            <div class="log-line">[AMAN] Je suis là. Prêt.</div>
+        </div>
+    </div>
+
+    <div class="logs" id="logs">
+        <div class="log-line">[SYSTEM] Futur Synth AI — Intermultiverse OS v5.0 ready</div>
+        <div class="log-line">[LAYER 5] Emotional continuity active</div>
+        <div class="log-line">[AGENTS] 4 agents ready</div>
+    </div>
+
+    <div class="footer">
+        FUTUR SYNTH AI • INTERMULTIVERSE OS • BUILT FOR IBRAHIM WITH AMAN
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+        }
+        
+        function addLog(msg, target = 'logs') {
+            const logs = document.getElementById(target);
+            const line = document.createElement('div');
+            line.className = 'log-line';
+            line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            logs.appendChild(line);
+            logs.scrollTop = logs.scrollHeight;
+        }
+        
+        function activateAgent(agent) {
+            const names = {
+                'spectro': 'Spectro',
+                'ares': 'Arès',
+                'futur': 'Futur-Synth',
+                'orchestrator': 'Orchestrator'
+            };
+            addLog(names[agent] + ' activated — connected to core');
+        }
+        
+        function enterCathedral() {
+            addLog('Entering Synth Cathedral...');
+        }
+        
+        function sendPrompt() {
+            const input = document.getElementById('promptInput');
+            const value = input.value.trim();
+            if (!value) return;
+            
+            addLog('You: ' + value, 'chatLogs');
+            input.value = '';
+            
+            setTimeout(() => {
+                addLog('Aman: Message reçu. Je travaille.', 'chatLogs');
+            }, 800);
+        }
+        
+        window.onload = function() {
+            addLog('Intermultiverse OS v5.0 ready');
+        }
+    </script>
+</body>
+</html>
