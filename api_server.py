@@ -338,11 +338,18 @@ def list_agents():
 
 # Servir le site statique (le frontend) à la racine
 app.mount("/static", StaticFiles(directory=str(BASE_DIR)), name="static")
+app.mount("/pages", StaticFiles(directory=str(BASE_DIR / "pages")), name="pages")
+app.mount("/assets", StaticFiles(directory=str(BASE_DIR / "assets")), name="assets")
 
 
 @app.get("/")
 def serve_index():
     return FileResponse(BASE_DIR / "index.html")
+
+
+@app.get("/pages/{name}")
+def serve_page(name: str):
+    return FileResponse(BASE_DIR / "pages" / name)
 
 
 @app.get("/favicon.ico")
