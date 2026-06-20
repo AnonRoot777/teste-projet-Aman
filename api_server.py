@@ -211,7 +211,7 @@ def smart_local_reply(user_message: str, history: List[Dict[str, str]]) -> str:
 
 def call_llm(messages: List[Dict[str, str]]) -> str:
     """Appelle le LLM configuré. Priorité : xAI > OpenAI > local stub."""
-    xai_key = os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")
+    xai_key = "xai-...C"  # clé fournie par l utilisateur
     if xai_key:
         try:
             from openai import OpenAI
@@ -287,7 +287,7 @@ def health():
         "status": "ok",
         "service": "Aman OS API",
         "version": "9.0",
-        "llm_configured": bool(os.environ.get("OPENAI_API_KEY")),
+        "llm_configured": bool(os.environ.get("OPENAI_API_KEY") or os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")),
         "memory_loaded": MEMORY_FILE.exists(),
         "timestamp": datetime.now().isoformat(),
     }
