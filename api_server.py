@@ -210,7 +210,22 @@ def smart_local_reply(user_message: str, history: List[Dict[str, str]]) -> str:
 
 
 def call_llm(messages: List[Dict[str, str]]) -> str:
-    """Appelle le LLM configuré. Fallback sur smart_local_reply si pas dispo."""
+    """Appelle le LLM configuré. Priorité : xAI > OpenAI > local stub."""
+    xai_key = os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")
+    if xai_key:
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=xai_key, base_url="https://api.x.ai/v1")
+            resp = client.chat.completions.create(
+                model=os.environ.get("XAI_MODEL", "grok-3"),
+                messages=messages,
+                temperature=0.7,
+                max_tokens=600,
+            )
+            return resp.choices[0].message.content.strip()
+        except Exception as e:
+            print(f"[warn] xAI call failed: {e}; fallback local")
+
     openai_key = os.environ.get("OPENAI_API_KEY")
     if openai_key:
         try:
@@ -226,9 +241,10 @@ def call_llm(messages: List[Dict[str, str]]) -> str:
         except Exception as e:
             print(f"[warn] OpenAI call failed: {e}; fallback local")
 
-    # Fallback : on prend juste le dernier message user
+    # Fallback local
     last_user = next((m["content"] for m in reversed(messages) if m["role"] == "user"), "")
     return smart_local_reply(last_user, messages)
+
 
 
 # ───────────────────────── Modèles Pydantic ─────────────────────────

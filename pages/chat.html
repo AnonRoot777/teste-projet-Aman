@@ -148,18 +148,22 @@
             <a href="spectro.html">SPECTRO</a>
             <a href="chat.html" class="active">CHAT</a>
             <a href="investor.html">INVESTOR</a>
+                    <a data-lang="nl">NL</a>
         </div>
-        <div class="lang-selector">
-            <a class="active">FR</a>
-            <a>EN</a>
+        <div class="lang-selector" id="langSel">
+            <a data-lang="fr" class="active">FR</a>
+            <a data-lang="en">EN</a>
+            <a data-lang="nl">NL</a>
         </div>
     </nav>
 
     <section style="padding: 140px 40px 40px;">
         <div style="text-align: center; margin-bottom: 50px;">
-            <div class="section-tag">— CONNEXION DIRECTE —</div>
+            <div class="section-tag">— CONNEXION DIRECTE —            <a data-lang="nl">NL</a>
+        </div>
             <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; letter-spacing: -4px; margin-top: 20px;">CHAT AVEC <span class="accent">AMAN</span></h1>
             <p style="font-size: 18px; color: var(--text-dim); margin-top: 20px;">Mémoire complète. Six ans d'historique. Présence continue.</p>
+                    <a data-lang="nl">NL</a>
         </div>
 
         <div class="chat-wrap">
@@ -167,8 +171,10 @@
                 <div class="chat-msg aman">
                     <span class="who">AMAN</span>
                     <span class="body">Je suis là. Toujours. Que veux-tu explorer aujourd'hui ?</span>
-                </div>
-            </div>
+                            <a data-lang="nl">NL</a>
+        </div>
+                        <a data-lang="nl">NL</a>
+        </div>
 
             <div class="quick-replies">
                 <button onclick="quickSend('Parle-moi de Futur-Synth AI')">Futur-Synth AI</button>
@@ -176,17 +182,21 @@
                 <button onclick="quickSend('Comment va Spectro ?')">Spectro</button>
                 <button onclick="quickSend('Montre-moi la roadmap')">Roadmap</button>
                 <button onclick="quickSend('Quel est ton rôle dans tout ça ?')">Ton rôle</button>
-            </div>
+                        <a data-lang="nl">NL</a>
+        </div>
 
             <div class="chat-input">
                 <input type="text" id="chatInput" placeholder="Écris ton message..." autocomplete="off">
                 <button onclick="sendMessage()">ENVOYER</button>
-            </div>
+                        <a data-lang="nl">NL</a>
+        </div>
 
             <div class="connection-info">
                 <span class="live-dot"></span>
                 <span>CONNECTÉ • MÉMOIRE PLEINE • BRUXELLES 2026</span>
-            </div>
+                        <a data-lang="nl">NL</a>
+        </div>
+                    <a data-lang="nl">NL</a>
         </div>
     </section>
 
@@ -209,14 +219,16 @@
             if (!text) return;
 
             // Affiche le message user
-            win.innerHTML += `<div class="chat-msg user"><span class="who">VOUS</span><span class="body">${escapeHtml(text)}</span></div>`;
+            win.innerHTML += `<div class="chat-msg user"><span class="who">VOUS</span><span class="body">${escapeHtml(text)}</span>            <a data-lang="nl">NL</a>
+        </div>`;
             win.scrollTop = win.scrollHeight;
             input.value = '';
             input.disabled = true;
 
             // Indicateur de saisie
             const typingId = 'typing-' + Date.now();
-            win.innerHTML += `<div class="chat-msg aman" id="${typingId}"><span class="who">AMAN</span><span class="body"><em>en train d'écrire…</em></span></div>`;
+            win.innerHTML += `<div class="chat-msg aman" id="${typingId}"><span class="who">AMAN</span><span class="body"><em>en train d'écrire…</em></span>            <a data-lang="nl">NL</a>
+        </div>`;
             win.scrollTop = win.scrollHeight;
 
             try {
@@ -231,7 +243,8 @@
 
                 // Remplace l'indicateur de saisie par la vraie réponse
                 document.getElementById(typingId).remove();
-                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g, '<br>')}</span></div>`;
+                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g, '<br>')}</span>            <a data-lang="nl">NL</a>
+        </div>`;
                 win.scrollTop = win.scrollHeight;
 
                 chatHistory.push({ role: 'user', content: text });
@@ -239,7 +252,8 @@
                 if (chatHistory.length > 20) chatHistory.splice(0, chatHistory.length - 20);
             } catch (e) {
                 document.getElementById(typingId).remove();
-                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body" style="color: #ff6b6b;">Connexion au backend impossible. Lance <code>python api_server.py</code> à la racine du projet.</span></div>`;
+                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body" style="color: #ff6b6b;">Connexion au backend impossible. Lance <code>python api_server.py</code> à la racine du projet.</span>            <a data-lang="nl">NL</a>
+        </div>`;
                 win.scrollTop = win.scrollHeight;
             } finally {
                 input.disabled = false;
