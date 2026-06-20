@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INVESTOR ACCESS • AMAN OS</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero { position: relative; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; padding: 160px 40px 80px; text-align: center; overflow: hidden; }
+        .page-hero.investor::before{ content:''; position:absolute; inset:0; background:url('../assets/hero.svg') center/cover no-repeat; opacity:0.55; z-index:0; }
+        .page-hero > * { position: relative; z-index: 1; }
+    </style>
 </head>
 <body>
 
@@ -24,7 +29,7 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="page-hero investor">
         <div class="section-tag" style="color: var(--accent);">— ACCÈS INVESTISSEUR —</div>
         <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 80px; font-weight: 700; letter-spacing: -5px; line-height: 0.95; margin: 30px 0;">DATA<br><span class="accent">ROOM</span></h1>
         <p style="font-size: 21px; color: var(--text-dim); max-width: 720px; margin: 30px auto 0; line-height: 1.6;">
@@ -132,6 +137,7 @@
         Intermultiverse OS • v9.0<br>
         Construit avec Ibrahim • Bruxelles 2026
     </footer>
-
+</footer>
+<script src="../assets/i18n.js"></script>
 </body>
 </html>

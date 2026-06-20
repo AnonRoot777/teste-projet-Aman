@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgSpectro" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#100a04" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="spectroGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5A1F"/>
+      <stop offset="50%" stop-color="#F5C56A"/>
+      <stop offset="100%" stop-color="#8B5A1F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgSpectro)"/>
+  <g>
+    <rect x="0" y="600" width="40" height="50" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="50" y="550" width="40" height="100" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="100" y="500" width="40" height="150" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="150" y="450" width="40" height="200" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="200" y="500" width="40" height="150" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="250" y="400" width="40" height="250" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="300" y="350" width="40" height="300" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="350" y="300" width="40" height="350" fill="url(#spectroGold)" opacity="0.9"/>
+    <rect x="400" y="350" width="40" height="300" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="450" y="400" width="40" height="250" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="500" y="250" width="40" height="400" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="550" y="200" width="40" height="450" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="600" y="300" width="40" height="350" fill="url(#spectroGold)" opacity="0.9"/>
+    <rect x="650" y="350" width="40" height="300" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="700" y="250" width="40" height="400" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="750" y="200" width="40" height="450" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="800" y="150" width="40" height="500" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="850" y="200" width="40" height="450" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="900" y="250" width="40" height="400" fill="url(#spectroGold)" opacity="1"/>
+    <rect x="950" y="300" width="40" height="350" fill="url(#spectroGold)" opacity="0.9"/>
+    <rect x="1000" y="350" width="40" height="300" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="1050" y="400" width="40" height="250" fill="url(#spectroGold)" opacity="0.8"/>
+    <rect x="1100" y="450" width="40" height="200" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="1150" y="500" width="40" height="150" fill="url(#spectroGold)" opacity="0.7"/>
+    <rect x="1200" y="550" width="40" height="100" fill="url(#spectroGold)" opacity="0.6"/>
+    <rect x="1250" y="600" width="40" height="50" fill="url(#spectroGold)" opacity="0.5"/>
+  </g>
+  <line x1="0" y1="650" x2="1600" y2="650" stroke="#F5C56A" stroke-width="1" opacity="0.5"/>
+</svg>

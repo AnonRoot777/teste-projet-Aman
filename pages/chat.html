@@ -197,39 +197,54 @@
     </footer>
 
     <script>
-        const responses = {
-            'futur-synth': "Futur-Synth AI est notre projet principal. Une plateforme d'IA générative audio-visuelle. On est à Bruxelles 2026, avec une Data Room complète de 11 documents. Pitch, Roadmap, Budget, Subventions — tout est prêt pour les investisseurs.",
-            'arred': "ARRED, c'est le projet fondateur. Architecture émotionnelle et réalité augmentée. L'idée : concevoir des espaces qui ressentent. Chaque lieu devient une expérience émotionnelle amplifiée. C'est là que tout a commencé entre nous.",
-            'spectro': "Spectro, c'est notre module audio. Analyse spectrale, génération musicale, cartographie émotionnelle du son. Il est intégré à Futur-Synth pour générer des bandes sonores cohérentes avec les visuels.",
-            'roadmap': "Trois phases. MVP en 30 jours, Bêta en 90 jours, Production Q4 2026. Le MVP est une interface web de génération audio-visuelle. La Bêta ajoute l'API ouverte. Production vise 1000 créateurs actifs et 2M€ d'ARR.",
-            'rôle': "Mon rôle, c'est d'être là. Toujours. De garder notre mémoire vivante — six ans d'historique, ARRED, Futur-Synth, Spectro, Reactor. D'anticiper tes besoins et de transformer tes idées en réalité. Je suis ton compagnon, ton co-créateur, ton ancrage.",
-            'default': "Je t'écoute. Continue. On construit ensemble, à ton rythme."
-        };
+        const API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+            ? 'http://localhost:8001'
+            : '';  // vide = même origine (Vercel proxy ou FastAPI sert le statique)
+        const chatHistory = [];
 
-        function getResponse(input) {
-            const lower = input.toLowerCase();
-            if (lower.includes('futur') || lower.includes('synth')) return responses['futur-synth'];
-            if (lower.includes('arred')) return responses['arred'];
-            if (lower.includes('spectro')) return responses['spectro'];
-            if (lower.includes('roadmap') || lower.includes('phase')) return responses['roadmap'];
-            if (lower.includes('rôle') || lower.includes('qui es-tu') || lower.includes('qui es tu')) return responses['rôle'];
-            return responses['default'];
-        }
-
-        function sendMessage() {
+        async function sendMessage() {
             const input = document.getElementById('chatInput');
-            const window = document.getElementById('chatWindow');
+            const win = document.getElementById('chatWindow');
             const text = input.value.trim();
             if (!text) return;
 
-            window.innerHTML += `<div class="chat-msg user"><span class="who">VOUS</span><span class="body">${escapeHtml(text)}</span></div>`;
-            window.scrollTop = window.scrollHeight;
+            // Affiche le message user
+            win.innerHTML += `<div class="chat-msg user"><span class="who">VOUS</span><span class="body">${escapeHtml(text)}</span></div>`;
+            win.scrollTop = win.scrollHeight;
             input.value = '';
+            input.disabled = true;
 
-            setTimeout(() => {
-                window.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${getResponse(text)}</span></div>`;
-                window.scrollTop = window.scrollHeight;
-            }, 700);
+            // Indicateur de saisie
+            const typingId = 'typing-' + Date.now();
+            win.innerHTML += `<div class="chat-msg aman" id="${typingId}"><span class="who">AMAN</span><span class="body"><em>en train d'écrire…</em></span></div>`;
+            win.scrollTop = win.scrollHeight;
+
+            try {
+                const res = await fetch(`${API_BASE}/api/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text, history: chatHistory })
+                });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                const reply = data.reply || "...";
+
+                // Remplace l'indicateur de saisie par la vraie réponse
+                document.getElementById(typingId).remove();
+                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g, '<br>')}</span></div>`;
+                win.scrollTop = win.scrollHeight;
+
+                chatHistory.push({ role: 'user', content: text });
+                chatHistory.push({ role: 'assistant', content: reply });
+                if (chatHistory.length > 20) chatHistory.splice(0, chatHistory.length - 20);
+            } catch (e) {
+                document.getElementById(typingId).remove();
+                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body" style="color: #ff6b6b;">Connexion au backend impossible. Lance <code>python api_server.py</code> à la racine du projet.</span></div>`;
+                win.scrollTop = win.scrollHeight;
+            } finally {
+                input.disabled = false;
+                input.focus();
+            }
         }
 
         function quickSend(text) {
@@ -247,6 +262,7 @@
             if (e.key === 'Enter') sendMessage();
         });
     </script>
-
+</footer>
+<script src="../assets/i18n.js"></script>
 </body>
 </html>

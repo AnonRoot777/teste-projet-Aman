@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1410" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0a0807" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C56A"/>
+      <stop offset="50%" stop-color="#D4943C"/>
+      <stop offset="100%" stop-color="#8B5A1F"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  <g opacity="0.18" stroke="url(#goldGrad)" stroke-width="0.5" fill="none">
+    <circle cx="800" cy="450" r="150"/>
+    <circle cx="800" cy="450" r="250"/>
+    <circle cx="800" cy="450" r="350"/>
+    <circle cx="800" cy="450" r="450"/>
+    <circle cx="800" cy="450" r="550"/>
+  </g>
+  <g opacity="0.7" filter="url(#glow)">
+    <path d="M 0 450 Q 200 350 400 450 T 800 450 T 1200 450 T 1600 450" stroke="url(#goldGrad)" stroke-width="2" fill="none"/>
+    <path d="M 0 480 Q 200 580 400 480 T 800 480 T 1200 480 T 1600 480" stroke="url(#goldGrad)" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M 0 420 Q 200 320 400 420 T 800 420 T 1200 420 T 1600 420" stroke="url(#goldGrad)" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+  <g fill="#F5C56A" opacity="0.6">
+    <circle cx="150" cy="180" r="1.5"/>
+    <circle cx="380" cy="290" r="1"/>
+    <circle cx="620" cy="120" r="2"/>
+    <circle cx="900" cy="240" r="1.5"/>
+    <circle cx="1200" cy="180" r="1"/>
+    <circle cx="1450" cy="310" r="1.5"/>
+    <circle cx="280" cy="640" r="1"/>
+    <circle cx="540" cy="710" r="2"/>
+    <circle cx="820" cy="660" r="1"/>
+    <circle cx="1100" cy="730" r="1.5"/>
+    <circle cx="1380" cy="680" r="1"/>
+  </g>
+  <g transform="translate(800 450)" opacity="0.4">
+    <polygon points="0,-80 70,-40 70,40 0,80 -70,40 -70,-40" fill="none" stroke="url(#goldGrad)" stroke-width="1"/>
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="url(#goldGrad)" opacity="0.3"/>
+  </g>
+</svg>

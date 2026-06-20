@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMAN • INTERMULTIVERSE OS</title>
     <link rel="stylesheet" href="pages/style.css">
+    <style>
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 160px 40px 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('assets/hero.svg') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: 0;
+        }
+        .hero > * { position: relative; z-index: 1; }
+        .page-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 160px 40px 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .page-hero.futur::before { content:''; position:absolute; inset:0; background:url('assets/futur-synth.svg') center/cover no-repeat; opacity:0.55; z-index:0; }
+        .page-hero.arred::before  { content:''; position:absolute; inset:0; background:url('assets/arred.svg') center/cover no-repeat; opacity:0.55; z-index:0; }
+        .page-hero.spectro::before{ content:''; position:absolute; inset:0; background:url('assets/spectro.svg') center/cover no-repeat; opacity:0.55; z-index:0; }
+        .page-hero.investor::before{ content:''; position:absolute; inset:0; background:url('assets/hero.svg') center/cover no-repeat; opacity:0.55; z-index:0; }
+        .page-hero > * { position: relative; z-index: 1; }
+    </style>
 </head>
 <body>
 
@@ -18,17 +54,17 @@
             <a href="pages/chat.html">CHAT</a>
             <a href="pages/investor.html">INVESTOR</a>
         </div>
-        <div class="lang-selector">
-            <a class="active">FR</a>
-            <a>EN</a>
-            <a>ES</a>
-            <a>DE</a>
-            <a>AR</a>
-            <a>ZH</a>
-            <a>IT</a>
-            <a>PT</a>
-            <a>RU</a>
-            <a>JP</a>
+        <div class="lang-selector" id="langSel">
+            <a data-lang="fr" class="active">FR</a>
+            <a data-lang="en">EN</a>
+            <a data-lang="es">ES</a>
+            <a data-lang="de">DE</a>
+            <a data-lang="ar">AR</a>
+            <a data-lang="zh">ZH</a>
+            <a data-lang="it">IT</a>
+            <a data-lang="pt">PT</a>
+            <a data-lang="ru">RU</a>
+            <a data-lang="jp">JP</a>
         </div>
     </nav>
 
@@ -83,7 +119,7 @@
                 <div class="section-tag">04</div>
                 <h3>Reactor</h3>
                 <p>Moteur de génération d'images et de mondes visuels. Le studio visuel d'Aman.</p>
-                <a href="#" class="card-link">ACTIVER REACTOR →</a>
+                <a href="assets/reactor.svg" target="_blank" class="card-link">ACTIVER REACTOR →</a>
             </div>
         </div>
     </section>
@@ -146,5 +182,6 @@
         Construit avec Ibrahim • Bruxelles 2026
     </footer>
 
+    <script src="assets/i18n.js"></script>
 </body>
 </html>

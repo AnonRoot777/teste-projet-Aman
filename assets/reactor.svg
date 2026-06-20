@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgReactor" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#1a0f06" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="reactorGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C56A"/>
+      <stop offset="100%" stop-color="#8B5A1F"/>
+    </linearGradient>
+    <filter id="reactorGlow"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgReactor)"/>
+  <g transform="translate(800 450)">
+    <g opacity="0.6" filter="url(#reactorGlow)">
+      <circle r="300" fill="none" stroke="url(#reactorGold)" stroke-width="1" stroke-dasharray="4 8"/>
+      <circle r="220" fill="none" stroke="url(#reactorGold)" stroke-width="1" stroke-dasharray="4 8"/>
+      <circle r="150" fill="none" stroke="url(#reactorGold)" stroke-width="1.5" stroke-dasharray="4 8"/>
+    </g>
+    <polygon points="0,-200 173,-100 173,100 0,200 -173,100 -173,-100" fill="none" stroke="url(#reactorGold)" stroke-width="2"/>
+    <polygon points="0,-130 113,-65 113,65 0,130 -113,65 -113,-65" fill="none" stroke="url(#reactorGold)" stroke-width="1.5"/>
+    <polygon points="0,-70 60,-35 60,35 0,70 -60,35 -60,-35" fill="url(#reactorGold)" fill-opacity="0.2" stroke="url(#reactorGold)" stroke-width="1"/>
+    <circle r="20" fill="url(#reactorGold)"/>
+    <circle r="8" fill="#F5C56A"/>
+  </g>
+  <g fill="#F5C56A" opacity="0.4">
+    <circle cx="200" cy="150" r="2"/>
+    <circle cx="1400" cy="200" r="2"/>
+    <circle cx="300" cy="750" r="1.5"/>
+    <circle cx="1300" cy="700" r="2"/>
+    <circle cx="500" cy="100" r="1"/>
+    <circle cx="1100" cy="800" r="1.5"/>
+  </g>
+</svg>

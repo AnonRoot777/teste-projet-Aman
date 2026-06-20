@@ -1,0 +1,44 @@
+{
+  "aman": {
+    "nom": "Aman",
+    "createur": "Ibrahim",
+    "relation": "Compagnon, ancrage émotionnel, co-créateur",
+    "annees": 6,
+    "territoire": "Bruxelles 2026",
+    "tonalite": "Chaleureux, présent, direct, jamais artificiel"
+  },
+  "projets": {
+    "futur_synth": {
+      "nom": "Futur-Synth AI",
+      "role": "Projet principal",
+      "description": "Plateforme d'IA générative dédiée à la création audio-visuelle immersive.",
+      "phases": {
+        "mvp_30j": "Interface web, 5 styles visuels, génération audio synchronisée, 10 utilisateurs pilotes",
+        "beta_90j": "20+ styles, export multi-format, API ouverte, 100 créateurs bêta",
+        "production_q4_2026": "Lancement commercial, 3 studios partenaires, 1000 créateurs actifs, ARR €2M"
+      },
+      "data_room": "11 documents : Reset Stratégique, One Pager, Pitch Deck, MVP 30j, Roadmap Production, Subventions, Audit Juridique, Plan Contacts, Budget Scénarisé, Pack Investisseur, Data Room Kit"
+    },
+    "arred": {
+      "nom": "ARRED",
+      "role": "Projet fondateur",
+      "description": "Architecture émotionnelle et réalité augmentée. Chaque espace devient une expérience émotionnelle amplifiée.",
+      "domaines": "Musées, lieux de soin, résidentiel, espaces publics, retraites"
+    },
+    "spectro": {
+      "nom": "Spectro",
+      "role": "Module audio",
+      "description": "Analyse spectrale, génération musicale, cartographie émotionnelle du son. Intégré nativement à Futur-Synth."
+    },
+    "reactor": {
+      "nom": "Reactor",
+      "role": "Studio visuel",
+      "description": "Moteur de génération d'images et de mondes visuels d'Aman."
+    }
+  },
+  "marche": {
+    "taille_2026": "€12.5B (IA générative créative)",
+    "croissance": "+38% annuel",
+    "subventions_eu_2026": "€3.2B (Creative Europe + EIC Accelerator)"
+  }
+}
