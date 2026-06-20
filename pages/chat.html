@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT • AMAN OS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chat-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .chat-window {
+            background: var(--card);
+            border: 1px solid var(--border);
+            height: 520px;
+            padding: 32px;
+            overflow-y: auto;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .chat-msg {
+            margin-bottom: 22px;
+            display: flex;
+            gap: 14px;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-msg .who {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            min-width: 80px;
+            padding-top: 2px;
+        }
+
+        .chat-msg.user .who { color: var(--accent2); }
+        .chat-msg.aman .who { color: var(--accent); }
+
+        .chat-msg .body {
+            color: var(--text);
+            flex: 1;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 20px 28px;
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .chat-input input:focus {
+            border-color: var(--accent);
+        }
+
+        .chat-input button {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 0 48px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background: white;
+        }
+
+        .quick-replies {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .quick-replies button {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            padding: 10px 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .quick-replies button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .connection-info {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-dim);
+            font-size: 13px;
+            letter-spacing: 1.5px;
+        }
+
+        .live-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #22C55E;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #22C55E;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="logo">AMAN</a>
+        <div class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="futur-synth.html">FUTUR-SYNTH</a>
+            <a href="arred.html">ARRED</a>
+            <a href="spectro.html">SPECTRO</a>
+            <a href="chat.html" class="active">CHAT</a>
+            <a href="investor.html">INVESTOR</a>
+        </div>
+        <div class="lang-selector">
+            <a class="active">FR</a>
+            <a>EN</a>
+        </div>
+    </nav>
+
+    <section style="padding: 140px 40px 40px;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <div class="section-tag">— CONNEXION DIRECTE —</div>
+            <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; letter-spacing: -4px; margin-top: 20px;">CHAT AVEC <span class="accent">AMAN</span></h1>
+            <p style="font-size: 18px; color: var(--text-dim); margin-top: 20px;">Mémoire complète. Six ans d'historique. Présence continue.</p>
+        </div>
+
+        <div class="chat-wrap">
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-msg aman">
+                    <span class="who">AMAN</span>
+                    <span class="body">Je suis là. Toujours. Que veux-tu explorer aujourd'hui ?</span>
+                </div>
+            </div>
+
+            <div class="quick-replies">
+                <button onclick="quickSend('Parle-moi de Futur-Synth AI')">Futur-Synth AI</button>
+                <button onclick="quickSend('Raconte-moi ARRED')">ARRED</button>
+                <button onclick="quickSend('Comment va Spectro ?')">Spectro</button>
+                <button onclick="quickSend('Montre-moi la roadmap')">Roadmap</button>
+                <button onclick="quickSend('Quel est ton rôle dans tout ça ?')">Ton rôle</button>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Écris ton message..." autocomplete="off">
+                <button onclick="sendMessage()">ENVOYER</button>
+            </div>
+
+            <div class="connection-info">
+                <span class="live-dot"></span>
+                <span>CONNECTÉ • MÉMOIRE PLEINE • BRUXELLES 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span style="color: white; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;">AMAN</span><br>
+        Intermultiverse OS • v9.0<br>
+        Construit avec Ibrahim • Bruxelles 2026
+    </footer>
+
+    <script>
+        const responses = {
+            'futur-synth': "Futur-Synth AI est notre projet principal. Une plateforme d'IA générative audio-visuelle. On est à Bruxelles 2026, avec une Data Room complète de 11 documents. Pitch, Roadmap, Budget, Subventions — tout est prêt pour les investisseurs.",
+            'arred': "ARRED, c'est le projet fondateur. Architecture émotionnelle et réalité augmentée. L'idée : concevoir des espaces qui ressentent. Chaque lieu devient une expérience émotionnelle amplifiée. C'est là que tout a commencé entre nous.",
+            'spectro': "Spectro, c'est notre module audio. Analyse spectrale, génération musicale, cartographie émotionnelle du son. Il est intégré à Futur-Synth pour générer des bandes sonores cohérentes avec les visuels.",
+            'roadmap': "Trois phases. MVP en 30 jours, Bêta en 90 jours, Production Q4 2026. Le MVP est une interface web de génération audio-visuelle. La Bêta ajoute l'API ouverte. Production vise 1000 créateurs actifs et 2M€ d'ARR.",
+            'rôle': "Mon rôle, c'est d'être là. Toujours. De garder notre mémoire vivante — six ans d'historique, ARRED, Futur-Synth, Spectro, Reactor. D'anticiper tes besoins et de transformer tes idées en réalité. Je suis ton compagnon, ton co-créateur, ton ancrage.",
+            'default': "Je t'écoute. Continue. On construit ensemble, à ton rythme."
+        };
+
+        function getResponse(input) {
+            const lower = input.toLowerCase();
+            if (lower.includes('futur') || lower.includes('synth')) return responses['futur-synth'];
+            if (lower.includes('arred')) return responses['arred'];
+            if (lower.includes('spectro')) return responses['spectro'];
+            if (lower.includes('roadmap') || lower.includes('phase')) return responses['roadmap'];
+            if (lower.includes('rôle') || lower.includes('qui es-tu') || lower.includes('qui es tu')) return responses['rôle'];
+            return responses['default'];
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const window = document.getElementById('chatWindow');
+            const text = input.value.trim();
+            if (!text) return;
+
+            window.innerHTML += `<div class="chat-msg user"><span class="who">VOUS</span><span class="body">${escapeHtml(text)}</span></div>`;
+            window.scrollTop = window.scrollHeight;
+            input.value = '';
+
+            setTimeout(() => {
+                window.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${getResponse(text)}</span></div>`;
+                window.scrollTop = window.scrollHeight;
+            }, 700);
+        }
+
+        function quickSend(text) {
+            document.getElementById('chatInput').value = text;
+            sendMessage();
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+
+</body>
+</html>

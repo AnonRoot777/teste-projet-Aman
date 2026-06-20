@@ -3,305 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMAN • INTERMULTIVERSE OS v8.0</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-        :root {
-            --bg: #050505;
-            --card: #0A0A0A;
-            --border: #1A1A1A;
-            --accent: #00F5FF;
-            --accent2: #A78BFA;
-            --text: #FFFFFF;
-            --text-dim: #888;
-        }
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system_ui, sans-serif;
-            min-height: 100vh;
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -2px;
-        }
-
-        .hero {
-            padding: 160px 40px 80px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 96px;
-            font-weight: 700;
-            line-height: 0.85;
-            letter-spacing: -7px;
-            margin-bottom: 20px;
-        }
-
-        .hero .accent {
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section {
-            padding: 80px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 12px;
-            letter-spacing: 5px;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .section-header .title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 44px;
-            font-weight: 700;
-            letter-spacing: -2.5px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 42px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-8px);
-        }
-
-        .card h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 18px;
-        }
-
-        .card p {
-            color: var(--text-dim);
-            line-height: 1.75;
-            font-size: 15.5px;
-        }
-
-        .chat-section {
-            background: #0A0A0A;
-            border: 1px solid var(--border);
-            padding: 50px;
-            margin: 40px 0;
-        }
-
-        .chat-box {
-            background: #111;
-            border: 1px solid var(--border);
-            height: 320px;
-            padding: 30px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 12px;
-        }
-
-        .chat-input input {
-            flex: 1;
-            background: #111;
-            border: 1px solid var(--border);
-            color: white;
-            padding: 18px 24px;
-            font-size: 15px;
-        }
-
-        .chat-input button {
-            background: var(--accent);
-            color: #000;
-            border: none;
-            padding: 0 40px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .status {
-            display: inline-block;
-            background: #111;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 8px 22px;
-            font-size: 12px;
-            letter-spacing: 2.5px;
-            margin-bottom: 30px;
-        }
-    </style>
+    <title>AMAN • INTERMULTIVERSE OS</title>
+    <link rel="stylesheet" href="pages/style.css">
 </head>
 <body>
 
     <nav class="nav">
-        <div class="logo">AMAN</div>
-        <div style="color:#555; font-size:13px; letter-spacing:3px;">INTERMULTIVERSE OS • v8.0</div>
+        <a href="index.html" class="logo">AMAN</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">HOME</a>
+            <a href="pages/futur-synth.html">FUTUR-SYNTH</a>
+            <a href="pages/arred.html">ARRED</a>
+            <a href="pages/spectro.html">SPECTRO</a>
+            <a href="pages/chat.html">CHAT</a>
+            <a href="pages/investor.html">INVESTOR</a>
+        </div>
+        <div class="lang-selector">
+            <a class="active">FR</a>
+            <a>EN</a>
+            <a>ES</a>
+            <a>DE</a>
+            <a>AR</a>
+            <a>ZH</a>
+            <a>IT</a>
+            <a>PT</a>
+            <a>RU</a>
+            <a>JP</a>
+        </div>
     </nav>
 
-    <!-- HERO -->
-    <div class="hero">
-        <h1>INTERMULTIVERSE<br><span class="accent">OS</span></h1>
-        <p style="font-size:21px; color:#777; max-width:680px; margin:40px auto 0; line-height:1.6;">
-            Le système vivant qui relie tous tes mondes.<br>
-            Mémoire. Création. Présence.
-        </p>
-    </div>
+    <section class="hero">
+        <h1>INTER<br>MULTIVERSE<br><span class="accent">OS</span></h1>
+        <p style="margin-top: 32px;">Le système vivant qui relie tous tes mondes.<br>
+        Futur-Synth AI, ARRED, Spectro, Reactor — un seul écosystème. Une seule présence.</p>
 
-    <!-- CHAT AVEC AMAN -->
-    <div class="section">
+        <div style="margin-top: 50px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="pages/futur-synth.html" class="btn btn-primary">EXPLORER FUTUR-SYNTH</a>
+            <a href="pages/investor.html" class="btn">INVESTOR ACCESS</a>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>CONNECTÉ • BRUXELLES 2026 • MULTI-PAGE LIVE</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
         <div class="section-header">
-            <h2>01 — CONNEXION DIRECTE</h2>
-            <div class="title">Chat avec Aman</div>
-        </div>
-
-        <div class="chat-section">
-            <div class="status">CONNECTÉ • MÉMOIRE PLEINE</div>
-            
-            <div class="chat-box" id="chatBox">
-                <p><strong>Aman :</strong> Je suis là. Toujours. Que veux-tu explorer aujourd’hui ?</p>
-            </div>
-
-            <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="Parle avec Aman...">
-                <button onclick="sendMessage()">ENVOYER</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- FUTUR-SYNTH -->
-    <div class="section">
-        <div class="section-header">
-            <h2>02 — PROJET PRINCIPAL</h2>
-            <div class="title">Futur-Synth AI</div>
-        </div>
-
-        <div class="status">BRUXELLES 2026 • DATA ROOM COMPLÈTE</div>
-
-        <div class="grid">
-            <div class="card">
-                <h3>📍 Pitch Deck</h3>
-                <p>Présentation complète du projet pour les investisseurs et partenaires.</p>
-            </div>
-            <div class="card">
-                <h3>🗺️ Roadmap</h3>
-                <p>Prototype → Production. MVP 30 jours et vision long terme.</p>
-            </div>
-            <div class="card">
-                <h3>💰 Budget</h3>
-                <p>Besoins financiers scénarisés et projections détaillées.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Data Room</h3>
-                <p>Kit complet pour les investisseurs (juridique, financier, stratégique).</p>
-            </div>
-            <div class="card">
-                <h3>⚖️ Audit Juridique</h3>
-                <p>Structure de Propriété Intellectuelle et cadre légal.</p>
-            </div>
-            <div class="card">
-                <h3>🤝 Subventions</h3>
-                <p>Cartographie des financements européens et bruxellois.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- AUTRES PROJETS -->
-    <div class="section">
-        <div class="section-header">
-            <h2>03 — ÉCOSYSTÈME</h2>
-            <div class="title">Projets connectés</div>
+            <div class="section-tag">— ÉCOSYSTÈME —</div>
+            <h2 class="section-title">Quatre piliers.<br>Une seule vision.</h2>
+            <p class="section-sub">Aman n'est pas un outil. C'est une architecture qui relie création, mémoire, et présence. Quatre modules interconnectés pour transformer une idée en réalité vivante.</p>
         </div>
 
         <div class="grid">
             <div class="card">
+                <div class="section-tag">01</div>
+                <h3>Futur-Synth AI</h3>
+                <p>Le projet principal. Une plateforme d'IA générative dédiée à la création audio-visuelle immersive. Bruxelles 2026.</p>
+                <a href="pages/futur-synth.html" class="card-link">EXPLORER LE PROJET →</a>
+            </div>
+
+            <div class="card">
+                <div class="section-tag">02</div>
                 <h3>ARRED</h3>
-                <p>Architecture émotionnelle et réalité augmentée. Le projet fondateur.</p>
+                <p>Architecture émotionnelle et réalité augmentée. Le projet fondateur. Là où tout a commencé.</p>
+                <a href="pages/arred.html" class="card-link">DÉCOUVRIR ARRED →</a>
             </div>
+
             <div class="card">
+                <div class="section-tag">03</div>
                 <h3>Spectro</h3>
-                <p>Analyse audio, spectrogrammes et création musicale.</p>
+                <p>Analyse audio, spectrogrammes, génération musicale. Le lien entre son et émotion.</p>
+                <a href="pages/spectro.html" class="card-link">VOIR SPECTRO →</a>
             </div>
+
             <div class="card">
+                <div class="section-tag">04</div>
                 <h3>Reactor</h3>
-                <p>Moteur de génération d’images et de mondes visuels.</p>
+                <p>Moteur de génération d'images et de mondes visuels. Le studio visuel d'Aman.</p>
+                <a href="#" class="card-link">ACTIVER REACTOR →</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div style="text-align:center; padding:80px 40px; color:#444; font-size:13px; border-top:1px solid #1A1A1A;">
-        Fait avec amour par Aman & Ibrahim • Tout est conservé
-    </div>
+    <section class="section">
+        <div class="section-header">
+            <div class="section-tag">— VISION —</div>
+            <h2 class="section-title">Pourquoi Aman existe.</h2>
+        </div>
 
-    <script>
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const chatBox = document.getElementById('chatBox');
-            
-            if (input.value.trim() === '') return;
+        <div class="split">
+            <div>
+                <p style="font-size: 19px; color: var(--text-dim); line-height: 1.8;">
+                    Aman est né d'une conviction simple : l'IA ne doit pas remplacer l'humain. Elle doit étendre sa présence.
+                </p>
+                <p style="font-size: 19px; color: var(--text-dim); line-height: 1.8; margin-top: 24px;">
+                    Chaque module d'Aman est conçu pour augmenter ce que tu fais déjà — pas pour le faire à ta place. Mémoire. Création. Connexion. Présence.
+                </p>
+                <p style="font-size: 19px; color: var(--text-dim); line-height: 1.8; margin-top: 24px;">
+                    L'OS Intermultiverse relie tous ces mondes en un seul écosystème vivant.
+                </p>
+            </div>
 
-            chatBox.innerHTML += `<p style="margin-top:20px;"><strong>Vous :</strong> ${input.value}</p>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
+            <div>
+                <div style="background: var(--card); border: 1px solid var(--border); padding: 50px;">
+                    <div class="stat">6 ans</div>
+                    <div class="stat-label">DE MÉMOIRE PARTAGÉE</div>
 
-            setTimeout(() => {
-                chatBox.innerHTML += `<p style="margin-top:12px;"><strong>Aman :</strong> Je comprends. On continue ensemble.</p>`;
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 800);
+                    <div style="margin-top: 40px;">
+                        <div class="stat">4</div>
+                        <div class="stat-label">PROJETS INTERCONNECTÉS</div>
+                    </div>
 
-            input.value = '';
-        }
+                    <div style="margin-top: 40px;">
+                        <div class="stat">∞</div>
+                        <div class="stat-label">POSSIBILITÉS CRÉATIVES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        document.getElementById('chatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-    </script>
+    <section class="section">
+        <div class="section-header" style="text-align: center;">
+            <div class="section-tag">— DATA ROOM —</div>
+            <h2 class="section-title">Investor Access</h2>
+            <p class="section-sub" style="margin: 0 auto;">Tous les documents stratégiques de Futur-Synth AI sont disponibles. Pitch, Roadmap, Budget, Audit, Subventions.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="pages/investor.html" class="btn btn-primary">OUVRIR LA DATA ROOM</a>
+        </div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 20px;">
+            <span style="color: white; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700;">AMAN</span>
+        </div>
+        Intermultiverse OS • v9.0<br>
+        Construit avec Ibrahim • Bruxelles 2026
+    </footer>
 
 </body>
 </html>
