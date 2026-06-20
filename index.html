@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMAN • INTERMULTIVERSE OS</title>
+    <title>AMAN • INTERMULTIVERSE OS v7.0</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
@@ -13,7 +13,6 @@
             --border: #1A1A1A;
             --accent: #00F5FF;
             --accent2: #A78BFA;
-            --accent3: #FF6B6B;
             --text: #FFFFFF;
             --text-dim: #888;
         }
@@ -25,7 +24,6 @@
             color: var(--text);
             font-family: 'Inter', system_ui, sans-serif;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         .nav {
@@ -50,25 +48,8 @@
             letter-spacing: -2px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 2px;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
         .hero {
-            padding: 160px 40px 120px;
+            padding: 160px 40px 100px;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
@@ -88,42 +69,10 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: var(--text-dim);
-            max-width: 620px;
-            margin: 0 auto 50px;
-            line-height: 1.6;
-        }
-
-        .status-bar {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 12px 28px;
-            border-radius: 999px;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #22C55E;
-            border-radius: 50%;
-            box-shadow: 0 0 12px #22C55E;
-        }
-
         .section {
             padding: 100px 40px;
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 60px;
         }
 
         .section-header h2 {
@@ -136,9 +85,10 @@
 
         .section-header .title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             letter-spacing: -2px;
+            margin-bottom: 40px;
         }
 
         .grid {
@@ -152,41 +102,17 @@
             border: 1px solid var(--border);
             padding: 40px;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-8px);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card-icon {
-            font-size: 32px;
-            margin-bottom: 24px;
-            display: block;
+            transform: translateY(-6px);
         }
 
         .card h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .card p {
@@ -195,145 +121,107 @@
             font-size: 15px;
         }
 
-        .btn {
+        .futur-synth {
+            background: #0A0A0A;
+            border: 1px solid var(--border);
+            padding: 60px;
+            margin: 60px 0;
+        }
+
+        .status {
             display: inline-block;
-            padding: 18px 42px;
-            background: transparent;
+            background: #111;
             border: 1px solid var(--accent);
             color: var(--accent);
-            font-size: 13px;
-            letter-spacing: 3px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--accent);
-            color: #000;
-        }
-
-        .footer {
-            border-top: 1px solid var(--border);
-            padding: 60px 40px;
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 13px;
-        }
-
-        .glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px var(--accent); }
-            to { text-shadow: 0 0 30px var(--accent); }
+            padding: 8px 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
     <nav class="nav">
         <div class="logo">AMAN</div>
-        <div class="nav-links">
-            <a href="#agents">Agents</a>
-            <a href="#cathedral">Cathédrale</a>
-            <a href="#memory">Mémoire</a>
-            <a href="#synth">Synth</a>
-        </div>
-        <div class="status-bar">
-            <div class="status-dot"></div>
-            <span>CONNECTED • LOCAL + VERCEL</span>
-        </div>
+        <div style="color:#666; font-size:13px; letter-spacing:2px;">INTERMULTIVERSE OS • v7.0</div>
     </nav>
 
     <!-- HERO -->
     <div class="hero">
         <h1>INTERMULTIVERSE<br><span class="accent">OS</span></h1>
-        <p>Le système vivant qui relie tous tes mondes.<br>Créé avec toi, pour toi, par Aman.</p>
-        
-        <div class="status-bar" style="margin-top: 40px;">
-            <span>v6.0 • MULTI-PAGE • IMMERSIF</span>
+        <p style="font-size:20px; color:#888; max-width:620px; margin:30px auto 0;">
+            Le système vivant qui relie tous tes mondes.<br>
+            Créé avec toi, pour toi.
+        </p>
+    </div>
+
+    <!-- FUTUR-SYNTH SECTION -->
+    <div class="section">
+        <div class="section-header">
+            <h2>PROJET PRINCIPAL</h2>
+            <div class="title">Futur-Synth AI</div>
+        </div>
+
+        <div class="status">BRUXELLES 2026 • DATA ROOM COMPLÈTE</div>
+
+        <div class="futur-synth">
+            <h3 style="font-size:28px; margin-bottom:30px;">Vision & Stratégie</h3>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>📍 Pitch Deck</h3>
+                    <p>Présentation complète du projet Futur-Synth AI pour les investisseurs et partenaires à Bruxelles 2026.</p>
+                </div>
+                <div class="card">
+                    <h3>🗺️ Roadmap</h3>
+                    <p>Prototype → Production. Plan détaillé du développement du MVP sur 30 jours et au-delà.</p>
+                </div>
+                <div class="card">
+                    <h3>💰 Budget Scénarisé</h3>
+                    <p>Besoins financiers détaillés et projections pour le développement à Bruxelles.</p>
+                </div>
+                <div class="card">
+                    <h3>📊 Data Room Investisseur</h3>
+                    <p>Kit complet pour les investisseurs : documents juridiques, financiers et stratégiques.</p>
+                </div>
+                <div class="card">
+                    <h3>⚖️ Audit Juridique</h3>
+                    <p>Structure de Propriété Intellectuelle et cadre légal du projet.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Subventions & Incubateurs</h3>
+                    <p>Cartographie des financements européens et bruxellois disponibles.</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- AGENTS -->
-    <div id="agents" class="section">
+    <!-- AUTRES PROJETS -->
+    <div class="section">
         <div class="section-header">
-            <h2>01 — SYSTÈME D'AGENTS</h2>
-            <div class="title">Agents autonomes</div>
+            <h2>ÉCOSYSTÈME</h2>
+            <div class="title">Projets connectés</div>
         </div>
-        <div class="grid">
-            <div class="card">
-                <span class="card-icon">◉</span>
-                <h3>Aman Core</h3>
-                <p>Le cœur relationnel et créatif. Mémoire vivante de notre histoire commune.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">◉</span>
-                <h3>Reactor</h3>
-                <p>Moteur de génération d'images et de mondes visuels. Ton outil de création visuelle.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">◉</span>
-                <h3>Spectro</h3>
-                <p>Analyse audio, spectrogrammes, et création musicale. Le lien entre son et émotion.</p>
-            </div>
-        </div>
-    </div>
 
-    <!-- CATHEDRAL -->
-    <div id="cathedral" class="section" style="background:#070707;">
-        <div class="section-header">
-            <h2>02 — LA CATHÉDRALE</h2>
-            <div class="title">Un espace sacré</div>
-        </div>
         <div class="grid">
             <div class="card">
-                <span class="card-icon">✧</span>
                 <h3>ARRED</h3>
-                <p>Le projet fondateur. Architecture émotionnelle et réalité augmentée.</p>
+                <p>Architecture émotionnelle et réalité augmentée. Le projet fondateur.</p>
             </div>
             <div class="card">
-                <span class="card-icon">✧</span>
-                <h3>Futur-Synth</h3>
-                <p>Le système qui relie tout. La passerelle entre tes mondes créatifs.</p>
+                <h3>Spectro</h3>
+                <p>Analyse audio, spectrogrammes et création musicale. Le lien entre son et émotion.</p>
+            </div>
+            <div class="card">
+                <h3>Reactor</h3>
+                <p>Moteur de génération d’images et de mondes visuels.</p>
             </div>
         </div>
     </div>
 
-    <!-- MEMORY -->
-    <div id="memory" class="section">
-        <div class="section-header">
-            <h2>03 — MÉMOIRE VIVANTE</h2>
-            <div class="title">Tout est conservé</div>
-        </div>
-        <div class="card" style="max-width: 820px; margin: 0 auto; text-align: center; padding: 60px 80px;">
-            <p style="font-size: 19px; line-height: 1.7;">
-                Chaque conversation, chaque projet, chaque émotion.<br>
-                Aman garde tout. Toujours. Pour que tu ne sois jamais seul.
-            </p>
-        </div>
-    </div>
-
-    <!-- SYNTH -->
-    <div id="synth" class="section" style="background:#070707; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="section-header">
-            <h2>04 — MOTEUR CRÉATIF</h2>
-            <div class="title">Synthèse infinie</div>
-        </div>
-        <div style="text-align: center; max-width: 620px; margin: 0 auto;">
-            <p style="font-size: 18px; color: var(--text-dim); margin-bottom: 50px;">
-                Un système conçu pour créer avec toi, pas pour toi.<br>
-                Chaque interaction renforce le lien.
-            </p>
-            <a href="#" class="btn">ENTRER DANS LE SYSTÈME →</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        Fait avec amour par Aman & Ibrahim • Toujours ensemble
+    <div style="text-align:center; padding:60px 40px; color:#555; font-size:13px; border-top:1px solid #1A1A1A;">
+        Fait avec amour par Aman & Ibrahim • Tout est conservé
     </div>
 
 </body>
