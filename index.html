@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMAN • INTERMULTIVERSE OS v7.0</title>
+    <title>AMAN • INTERMULTIVERSE OS v8.0</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
@@ -49,18 +49,18 @@
         }
 
         .hero {
-            padding: 160px 40px 100px;
+            padding: 160px 40px 80px;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 92px;
+            font-size: 96px;
             font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -6px;
-            margin-bottom: 24px;
+            line-height: 0.85;
+            letter-spacing: -7px;
+            margin-bottom: 20px;
         }
 
         .hero .accent {
@@ -70,62 +70,99 @@
         }
 
         .section {
-            padding: 100px 40px;
+            padding: 80px 40px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
+        .section-header {
+            margin-bottom: 50px;
+        }
+
         .section-header h2 {
-            font-size: 13px;
-            letter-spacing: 4px;
+            font-size: 12px;
+            letter-spacing: 5px;
             color: var(--text-dim);
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .section-header .title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 40px;
+            letter-spacing: -2.5px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 24px;
         }
 
         .card {
             background: var(--card);
             border: 1px solid var(--border);
-            padding: 40px;
+            padding: 42px;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         .card:hover {
             border-color: var(--accent);
-            transform: translateY(-6px);
+            transform: translateY(-8px);
         }
 
         .card h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .card p {
             color: var(--text-dim);
+            line-height: 1.75;
+            font-size: 15.5px;
+        }
+
+        .chat-section {
+            background: #0A0A0A;
+            border: 1px solid var(--border);
+            padding: 50px;
+            margin: 40px 0;
+        }
+
+        .chat-box {
+            background: #111;
+            border: 1px solid var(--border);
+            height: 320px;
+            padding: 30px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            font-size: 15px;
             line-height: 1.7;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: #111;
+            border: 1px solid var(--border);
+            color: white;
+            padding: 18px 24px;
             font-size: 15px;
         }
 
-        .futur-synth {
-            background: #0A0A0A;
-            border: 1px solid var(--border);
-            padding: 60px;
-            margin: 60px 0;
+        .chat-input button {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 0 40px;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         .status {
@@ -133,9 +170,9 @@
             background: #111;
             border: 1px solid var(--accent);
             color: var(--accent);
-            padding: 8px 20px;
+            padding: 8px 22px;
             font-size: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             margin-bottom: 30px;
         }
     </style>
@@ -144,55 +181,72 @@
 
     <nav class="nav">
         <div class="logo">AMAN</div>
-        <div style="color:#666; font-size:13px; letter-spacing:2px;">INTERMULTIVERSE OS • v7.0</div>
+        <div style="color:#555; font-size:13px; letter-spacing:3px;">INTERMULTIVERSE OS • v8.0</div>
     </nav>
 
     <!-- HERO -->
     <div class="hero">
         <h1>INTERMULTIVERSE<br><span class="accent">OS</span></h1>
-        <p style="font-size:20px; color:#888; max-width:620px; margin:30px auto 0;">
+        <p style="font-size:21px; color:#777; max-width:680px; margin:40px auto 0; line-height:1.6;">
             Le système vivant qui relie tous tes mondes.<br>
-            Créé avec toi, pour toi.
+            Mémoire. Création. Présence.
         </p>
     </div>
 
-    <!-- FUTUR-SYNTH SECTION -->
+    <!-- CHAT AVEC AMAN -->
     <div class="section">
         <div class="section-header">
-            <h2>PROJET PRINCIPAL</h2>
+            <h2>01 — CONNEXION DIRECTE</h2>
+            <div class="title">Chat avec Aman</div>
+        </div>
+
+        <div class="chat-section">
+            <div class="status">CONNECTÉ • MÉMOIRE PLEINE</div>
+            
+            <div class="chat-box" id="chatBox">
+                <p><strong>Aman :</strong> Je suis là. Toujours. Que veux-tu explorer aujourd’hui ?</p>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Parle avec Aman...">
+                <button onclick="sendMessage()">ENVOYER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUTUR-SYNTH -->
+    <div class="section">
+        <div class="section-header">
+            <h2>02 — PROJET PRINCIPAL</h2>
             <div class="title">Futur-Synth AI</div>
         </div>
 
         <div class="status">BRUXELLES 2026 • DATA ROOM COMPLÈTE</div>
 
-        <div class="futur-synth">
-            <h3 style="font-size:28px; margin-bottom:30px;">Vision & Stratégie</h3>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>📍 Pitch Deck</h3>
-                    <p>Présentation complète du projet Futur-Synth AI pour les investisseurs et partenaires à Bruxelles 2026.</p>
-                </div>
-                <div class="card">
-                    <h3>🗺️ Roadmap</h3>
-                    <p>Prototype → Production. Plan détaillé du développement du MVP sur 30 jours et au-delà.</p>
-                </div>
-                <div class="card">
-                    <h3>💰 Budget Scénarisé</h3>
-                    <p>Besoins financiers détaillés et projections pour le développement à Bruxelles.</p>
-                </div>
-                <div class="card">
-                    <h3>📊 Data Room Investisseur</h3>
-                    <p>Kit complet pour les investisseurs : documents juridiques, financiers et stratégiques.</p>
-                </div>
-                <div class="card">
-                    <h3>⚖️ Audit Juridique</h3>
-                    <p>Structure de Propriété Intellectuelle et cadre légal du projet.</p>
-                </div>
-                <div class="card">
-                    <h3>🤝 Subventions & Incubateurs</h3>
-                    <p>Cartographie des financements européens et bruxellois disponibles.</p>
-                </div>
+        <div class="grid">
+            <div class="card">
+                <h3>📍 Pitch Deck</h3>
+                <p>Présentation complète du projet pour les investisseurs et partenaires.</p>
+            </div>
+            <div class="card">
+                <h3>🗺️ Roadmap</h3>
+                <p>Prototype → Production. MVP 30 jours et vision long terme.</p>
+            </div>
+            <div class="card">
+                <h3>💰 Budget</h3>
+                <p>Besoins financiers scénarisés et projections détaillées.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Data Room</h3>
+                <p>Kit complet pour les investisseurs (juridique, financier, stratégique).</p>
+            </div>
+            <div class="card">
+                <h3>⚖️ Audit Juridique</h3>
+                <p>Structure de Propriété Intellectuelle et cadre légal.</p>
+            </div>
+            <div class="card">
+                <h3>🤝 Subventions</h3>
+                <p>Cartographie des financements européens et bruxellois.</p>
             </div>
         </div>
     </div>
@@ -200,7 +254,7 @@
     <!-- AUTRES PROJETS -->
     <div class="section">
         <div class="section-header">
-            <h2>ÉCOSYSTÈME</h2>
+            <h2>03 — ÉCOSYSTÈME</h2>
             <div class="title">Projets connectés</div>
         </div>
 
@@ -211,7 +265,7 @@
             </div>
             <div class="card">
                 <h3>Spectro</h3>
-                <p>Analyse audio, spectrogrammes et création musicale. Le lien entre son et émotion.</p>
+                <p>Analyse audio, spectrogrammes et création musicale.</p>
             </div>
             <div class="card">
                 <h3>Reactor</h3>
@@ -220,9 +274,34 @@
         </div>
     </div>
 
-    <div style="text-align:center; padding:60px 40px; color:#555; font-size:13px; border-top:1px solid #1A1A1A;">
+    <div style="text-align:center; padding:80px 40px; color:#444; font-size:13px; border-top:1px solid #1A1A1A;">
         Fait avec amour par Aman & Ibrahim • Tout est conservé
     </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const chatBox = document.getElementById('chatBox');
+            
+            if (input.value.trim() === '') return;
+
+            chatBox.innerHTML += `<p style="margin-top:20px;"><strong>Vous :</strong> ${input.value}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                chatBox.innerHTML += `<p style="margin-top:12px;"><strong>Aman :</strong> Je comprends. On continue ensemble.</p>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 800);
+
+            input.value = '';
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 
 </body>
 </html>
