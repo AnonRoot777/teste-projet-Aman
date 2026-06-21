@@ -1,0 +1,25 @@
+{
+  "headers": [
+    {
+      "source": "/game/aman-world-engine/Build/(.*).wasm.gz",
+      "headers": [
+        { "key": "Content-Type", "value": "application/wasm" },
+        { "key": "Content-Encoding", "value": "gzip" }
+      ]
+    },
+    {
+      "source": "/game/aman-world-engine/Build/(.*).data.gz",
+      "headers": [
+        { "key": "Content-Type", "value": "application/octet-stream" },
+        { "key": "Content-Encoding", "value": "gzip" }
+      ]
+    },
+    {
+      "source": "/game/aman-world-engine/Build/(.*).framework.js.gz",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript" },
+        { "key": "Content-Encoding", "value": "gzip" }
+      ]
+    }
+  ]
+}

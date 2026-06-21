@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMAN WORLD ENGINE • Download</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .engine-hero { padding: 150px 40px 60px; text-align: center; border-bottom: 1px solid var(--border); background: radial-gradient(circle at 50% 10%, rgba(0,245,255,.18), transparent 38%), radial-gradient(circle at 10% 80%, rgba(167,139,250,.15), transparent 32%); }
+    .engine-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 8vw, 104px); line-height: .88; letter-spacing: -5px; margin-bottom: 28px; }
+    .engine-frame { width: 100%; min-height: 720px; border: 1px solid var(--border); background: #000; box-shadow: 0 0 80px rgba(0,245,255,.12); }
+    .download-row { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:38px; }
+    .spec-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:42px; }
+    .spec { background: var(--card); border: 1px solid var(--border); padding: 26px; }
+    .spec strong { color: var(--accent); display:block; margin-bottom:8px; letter-spacing:1px; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="logo">AMAN</a>
+    <div class="nav-links">
+      <a href="../index.html">HOME</a>
+      <a href="futur-synth.html">FUTUR-SYNTH</a>
+      <a href="arred.html">ARRED</a>
+      <a href="spectro.html">SPECTRO</a>
+      <a href="chat.html">CHAT</a>
+      <a href="investor.html">INVESTOR</a>
+      <a href="engine.html" class="active">ENGINE</a>
+    </div>
+    <div class="lang-selector" id="langSel"><a href="#" data-lang="fr" class="active">FR</a><a href="#" data-lang="en">EN</a><a href="#" data-lang="nl">NL</a></div>
+  </nav>
+
+  <section class="engine-hero">
+    <div class="section-tag">— BUILD RÉEL UNITY —</div>
+    <h1>AMAN WORLD<br><span class="accent">ENGINE</span></h1>
+    <p>Premier moteur de monde téléchargeable pour Aman OS : Futur-Synth, ARRED, Spectro et Aman Core réunis dans une scène Unity réelle.</p>
+    <div class="download-row">
+      <a class="btn btn-primary" href="../downloads/AmanWorldEngine-Windows-v0.1.zip" download>TÉLÉCHARGER WINDOWS v0.1</a>
+      <a class="btn" href="../game/aman-world-engine/index.html" target="_blank">LANCER WEBGL</a>
+      <a class="btn" href="../downloads/aman-world-engine-manifest.json" target="_blank">MANIFEST</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">— JOUER DANS LE NAVIGATEUR —</div>
+      <h2 class="section-title">Prototype WebGL intégré.</h2>
+      <p class="section-sub">Si le navigateur bloque l’intégration iframe, utilise le bouton “Lancer WebGL”. Le build est présent dans le site et peut être servi en statique.</p>
+    </div>
+    <iframe class="engine-frame" src="../game/aman-world-engine/index.html" title="AMAN WORLD ENGINE WebGL"></iframe>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">— MODULES —</div>
+      <h2 class="section-title">Le noyau jouable d’Aman.</h2>
+    </div>
+    <div class="spec-grid">
+      <div class="spec"><strong>AMAN CORE</strong>Mémoire centrale, présence et pont backend Aman.</div>
+      <div class="spec"><strong>FUTUR-SYNTH</strong>Portail de création audio-visuelle immersive.</div>
+      <div class="spec"><strong>ARRED</strong>Architecture émotionnelle et réalité augmentée.</div>
+      <div class="spec"><strong>SPECTRO</strong>Analyse spectrale, son, vibration et émotion.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">— CONTRÔLES —</div>
+      <h2 class="section-title">Commandes MVP.</h2>
+      <p class="section-sub">1 = Futur-Synth • 2 = ARRED • 3 = Spectro • 4 = Aman Core • C = ping backend Aman local.</p>
+    </div>
+  </section>
+
+  <footer>AMAN WORLD ENGINE • Unity 6000.5.0f1 • v0.1 • Bruxelles 2026</footer>
+  <script src="../assets/i18n.js"></script>
+</body>
+</html>

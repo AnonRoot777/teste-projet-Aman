@@ -1,0 +1,8 @@
+{
+  "name": "AMAN WORLD ENGINE",
+  "version": "0.1",
+  "unity": "6000.5.0f1",
+  "targets": ["Windows", "WebGL"],
+  "modules": ["AMAN CORE", "FUTUR-SYNTH", "ARRED", "SPECTRO"],
+  "backend": "http://127.0.0.1:8008/api/chat"
+}
