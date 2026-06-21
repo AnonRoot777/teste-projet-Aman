@@ -253,6 +253,22 @@
                 chatHistory.push({ role: 'assistant', content: reply });
                 if (chatHistory.length > 20) chatHistory.splice(0, chatHistory.length - 20);
             } catch (e) {
+                // Backend cloud HS / 404 / timeout → bascule sur le moteur de réponses local Aman
+                try {
+                    const r = await fetch('../api/chat', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ message: text, history: chatHistory }) });
+                    if (r.ok) {
+                        const d = await r.json();
+                        const reply = (d && d.reply) || localAmanReply(text);
+                        document.getElementById(typingId).remove();
+                        win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g,'<br>')}</span>
+        </div>`;
+                        win.scrollTop = win.scrollHeight;
+                        chatHistory.push({ role:'user', content: text });
+                        chatHistory.push({ role:'assistant', content: reply });
+                        input.disabled = false; input.focus();
+                        return;
+                    }
+                } catch (_) {}
                 const reply = localAmanReply(text);
                 document.getElementById(typingId).remove();
                 win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g, '<br>')}</span>
