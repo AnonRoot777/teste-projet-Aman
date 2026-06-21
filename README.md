@@ -26,7 +26,7 @@ aman-os-deploy/
 ## 🚀 Projets
 
 ### Futur-Synth AI — Projet principal
-Plateforme d'IA générative dédiée à la création audio-visuelle immersive. Bruxelles 2026. Data Room complète de 11 documents (Pitch, Roadmap, Budget, Audit Juridique, Subventions…).
+Plateforme d'IA générative dédiée à la création audio-visuelle immersive. Bruxelles 2026. Data Room complète de 10 documents intégrés (Pitch, Roadmap, Budget, Audit Juridique, Subventions, Data Room Kit…).
 
 ### ARRED — Architecture émotionnelle
 Architecture émotionnelle et réalité augmentée. Le projet fondateur. Conception d'espaces qui amplifient une émotion ciblée.
@@ -39,7 +39,7 @@ Moteur de génération d'images et de mondes visuels.
 
 ## 🔗 Investor Access
 
-L'accès à la Data Room complète est disponible via la page **Investor**. 11 documents audités :
+L'accès à la Data Room complète est disponible via la page **Investor**. 10 documents audités :
 
 1. Reset Stratégique
 2. One Pager
@@ -50,8 +50,7 @@ L'accès à la Data Room complète est disponible via la page **Investor**. 11 d
 7. Audit Juridique
 8. Plan Contacts & Relances
 9. Budget Scénarisé
-10. Pack Investisseur Complet
-11. Data Room Kit Investisseur
+10. Data Room Kit Investisseur
 
 ## 🌍 Multilingue
 
@@ -70,7 +69,7 @@ L'OS supporte 10 langues : FR, EN, ES, DE, AR, ZH, IT, PT, RU, JP.
 
 - **6 ans** de mémoire partagée
 - **4** projets interconnectés
-- **11** documents Data Room audités
+- **10** documents Data Room audités
 - **MVP 30 jours** — livraison Q2 2026
 - **Production** — Q4 2026
 

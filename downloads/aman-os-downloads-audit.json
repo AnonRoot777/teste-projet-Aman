@@ -1,0 +1,142 @@
+{
+  "generated_at_utc": "2026-06-21T14:55:45Z",
+  "site": "https://teste-projet-aman.vercel.app",
+  "commit": "43afc17641d5eb5a7ca642e42bafee79fdbf18c9",
+  "summary": {
+    "pdf_count": 10,
+    "strategic_pdf_count": 10,
+    "download_count": 3,
+    "all_local_links_checked": "326 links, 0 missing",
+    "local_archive_tests": "Windows ZIP OK, Android APK OK, WebGL gzip OK",
+    "vercel_checked": "HTTP 200 for engine page, ZIP, APK, WebGL, manifest, all PDFs"
+  },
+  "items": [
+    {
+      "path": "documents/Futur_Synth_AI_PDF01_Reset_Strategique_Bruxelles_2026.pdf",
+      "size": 152930,
+      "sha256": "ab2ec6940cd1d31c75ede2cecf2254ce347385e95fe473acc6af26d0c925cb43",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF02_One_Pager_Bruxelles_2026.pdf",
+      "size": 63995,
+      "sha256": "91c82cbb37cc22c848f0467e962f3ee6166d75e25b1d73e67b113b9060192d77",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF03_Pitch_Deck_Bruxelles_2026.pdf",
+      "size": 84697,
+      "sha256": "030d819b9cb6fd943d66070340524440becd0c890e556a803deb0aba0578ada2",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF04_MVP_30_Jours_Bruxelles_2026.pdf",
+      "size": 83891,
+      "sha256": "323ebd1488b05fe9cf1df7d85d7663cd188a4619c3f0b7f7ebee6404833bc9ba",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF05_Roadmap_Prototype_Production_Bruxelles_2026.pdf",
+      "size": 84953,
+      "sha256": "61ac8c794804c30a5246a42644927e97f60593f6e274db8aeebd423aae9b6d16",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF06_Subventions_Incubateurs_Bruxelles_Europe_2026.pdf",
+      "size": 102095,
+      "sha256": "c945d3434e99c18feddb13d453c76bf3c675e12cf24996e4317bca97603bd68b",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF07_Audit_Juridique_Structure_PI_Bruxelles_2026.pdf",
+      "size": 108635,
+      "sha256": "7fd7dfa5a56f93cfbef39c74013bdbd7a63dfa1ce4d9eb00f0d9cc35fde6b3b6",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF08_Plan_Contacts_Relances_Partenaires_Bruxelles_2026.pdf",
+      "size": 107540,
+      "sha256": "b66eb9ddacdff94f72c6195da85cd2f633ba0250a133faa9ded8c608dd4df9d5",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF09_Budget_Scenarise_Besoins_Financiers_Bruxelles_2026.pdf",
+      "size": 103174,
+      "sha256": "8a6e3eba4bcb8685585b754f6fd9846a00edd54cec6c74f9c976c635fa5cdf3d",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "documents/Futur_Synth_AI_PDF11_Data_Room_Kit_Investisseur_Bruxelles_2026.pdf",
+      "size": 77275,
+      "sha256": "baca3f098510cb5c4f7aff20080c49e1ae48ec23c91bbeb9ce34b33264b21d22",
+      "type": "pdf",
+      "magic": "%PDF-1.4",
+      "has_pdf_eof": true
+    },
+    {
+      "path": "downloads/aman-world-engine-manifest.json",
+      "size": 434,
+      "sha256": "08ca784743e4800d8a5709b2b2d87ba513e6bcc670da10517d01853d0e2e5f6d",
+      "type": "json"
+    },
+    {
+      "path": "downloads/AmanOS-Mobile-v0.1-release.apk",
+      "size": 43981143,
+      "sha256": "080a83846b829840890ce4c4b0cdbfa83d2fa6dea8b2de2faa9d6f9d346e95c5",
+      "type": "apk",
+      "zip_test": "ok",
+      "entries": 67
+    },
+    {
+      "path": "downloads/AmanWorldEngine-Windows-v0.1.zip",
+      "size": 34868610,
+      "sha256": "975d0cec8026b5d2f86de9ac23a51b490b87e4671f0e815f28975b13b8cc2a73",
+      "type": "zip",
+      "zip_test": "ok",
+      "entries": 151
+    }
+  ],
+  "webgl": [
+    {
+      "path": "game/aman-world-engine/Build/AmanWorldEngine-WebGL.data.gz",
+      "size": 1068056,
+      "sha256": "85a94fa76bdca32dd1b4e9e26d1795ce7ee88167a7c5cf9ac462b080b3337b3f",
+      "gzip_test": "ok"
+    },
+    {
+      "path": "game/aman-world-engine/Build/AmanWorldEngine-WebGL.framework.js.gz",
+      "size": 74337,
+      "sha256": "2428f7ce5d4088a304817b345cd269f03eca9cf90be88b67ecbea2f14ca6ce40",
+      "gzip_test": "ok"
+    },
+    {
+      "path": "game/aman-world-engine/Build/AmanWorldEngine-WebGL.loader.js",
+      "size": 27221,
+      "sha256": "ad6a6ca0478ec17162c30e299a220d77aef6fde395d8ab54e1ce94f5a6ffc78c"
+    },
+    {
+      "path": "game/aman-world-engine/Build/AmanWorldEngine-WebGL.wasm.gz",
+      "size": 5411319,
+      "sha256": "0e03e1051e9c56aae65694798d1f54ea7829171d42b5b7b0e4ea91a86b37a03f",
+      "gzip_test": "ok"
+    }
+  ]
+}
