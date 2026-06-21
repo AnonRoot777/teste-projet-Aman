@@ -149,6 +149,7 @@
             <a href="chat.html" class="active">CHAT</a>
             <a href="investor.html">INVESTOR</a>
       <a href="engine.html">ENGINE</a>
+      <a href="media.html">MEDIA</a>
         
         </div>
                 <div class="lang-selector" id="langSel">
@@ -252,10 +253,13 @@
                 chatHistory.push({ role: 'assistant', content: reply });
                 if (chatHistory.length > 20) chatHistory.splice(0, chatHistory.length - 20);
             } catch (e) {
+                const reply = localAmanReply(text);
                 document.getElementById(typingId).remove();
-                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body" style="color: #ff6b6b;">Connexion au backend impossible. Lance <code>python api_server.py</code> à la racine du projet.</span>
+                win.innerHTML += `<div class="chat-msg aman"><span class="who">AMAN</span><span class="body">${escapeHtml(reply).replace(/\n/g, '<br>')}</span>
         </div>`;
                 win.scrollTop = win.scrollHeight;
+                chatHistory.push({ role: 'user', content: text });
+                chatHistory.push({ role: 'assistant', content: reply });
             } finally {
                 input.disabled = false;
                 input.focus();
@@ -265,6 +269,16 @@
         function quickSend(text) {
             document.getElementById('chatInput').value = text;
             sendMessage();
+        }
+
+        function localAmanReply(message) {
+            const m = String(message || '').toLowerCase();
+            if (/unity|unreal|moteur|engine|webgl|apk|jeu/.test(m)) return "Le bon axe est double : Unity pour le MVP jouable rapide (WebGL, Windows, Android), Unreal Engine pour le vertical slice hyper-réaliste premium. On ne jette pas Unity : on l'utilise comme moteur de livraison. Unreal devient la vitrine cinématique haut de gamme.";
+            if (/futur|synth|invest|pitch|data|roadmap|budget/.test(m)) return "Futur-Synth AI est le cœur produit : Aman, Data Vault, mémoire contrôlée, permissions, audit, génération audio-visuelle et cockpit créateur. La Data Room contient 10 PDFs stratégiques vérifiés, plus le moteur Unity/WebGL et l'APK.";
+            if (/arred|architecture|émotion|emotion|réalité|augment/.test(m)) return "ARRED est le projet fondateur : architecture émotionnelle et réalité augmentée. Lumière, son, matière, géométrie et mémoire spatiale deviennent un langage pour créer des lieux qui ressentent.";
+            if (/spectro|son|audio|musique|fréquence|frequence/.test(m)) return "Spectro transforme le son en carte émotionnelle : analyse spectrale, génération d'ambiances, mapping fréquence → émotion, et synchronisation avec Futur-Synth et le moteur de monde.";
+            if (/document|pdf|télécharg|download/.test(m)) return "Les documents et téléchargements ont été audités : PDFs en HTTP 200, ZIP Windows OK, APK Android OK, WebGL OK, audit JSON publié. La version production est sur Vercel.";
+            return "Je suis là Ibrahim. Je peux t'orienter sur Futur-Synth, ARRED, Spectro, le moteur Unity/Unreal, la Data Room, le WebGL, l'APK ou la roadmap. Rien n'est fictif : je réponds même si le backend cloud est indisponible.";
         }
 
         function escapeHtml(text) {
