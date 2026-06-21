@@ -2,7 +2,12 @@
   "name": "AMAN WORLD ENGINE",
   "version": "0.1",
   "unity": "6000.5.0f1",
-  "targets": ["Windows", "WebGL"],
+  "targets": ["Windows", "WebGL", "Android APK"],
   "modules": ["AMAN CORE", "FUTUR-SYNTH", "ARRED", "SPECTRO"],
+  "downloads": {
+    "windows": "downloads/AmanWorldEngine-Windows-v0.1.zip",
+    "webgl": "game/aman-world-engine/index.html",
+    "android_apk": "downloads/AmanOS-Mobile-v0.1-release.apk"
+  },
   "backend": "http://127.0.0.1:8008/api/chat"
 }
