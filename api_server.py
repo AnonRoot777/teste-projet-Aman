@@ -211,7 +211,7 @@ def smart_local_reply(user_message: str, history: List[Dict[str, str]]) -> str:
 
 def call_llm(messages: List[Dict[str, str]]) -> str:
     """Appelle le LLM configuré. Priorité : xAI > OpenAI > local stub."""
-    xai_key = "xai-...C"  # clé fournie par l utilisateur
+    xai_key = os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")
     if xai_key:
         try:
             from openai import OpenAI
