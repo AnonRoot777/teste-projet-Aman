@@ -52,7 +52,7 @@ async function testOpenAiProviderUsesRealChatCompletion() {
       const payload = JSON.parse(options.body);
       assert.strictEqual(payload.model, 'gpt-test');
       assert(payload.messages.some(m => m.role === 'system' && /Aman OS/.test(m.content)));
-      assert(payload.messages.some(m => m.role === 'user' && m.content === 'Réponds librement'));
+      assert(payload.messages.some(m => m.role === 'user' && /Réponds librement/.test(m.content)));
       return { ok: true, json: async () => ({ choices: [{ message: { content: 'Réponse IA réelle simulée.' } }] }) };
     }
   );
@@ -76,10 +76,21 @@ async function testProviderFailureFallsBackCleanly() {
   assert.match(res.body.reply, /Aman|Futur-Synth|projet/i);
 }
 
+async function testEnglishFallbackHonorsInterfaceLanguage() {
+  const res = await callHandler({ message: 'api chat connection', lang: 'en' }, {
+    OPENAI_API_KEY: '', XAI_API_KEY: '', GROK_API_KEY: '', OPENROUTER_API_KEY: '', ANTHROPIC_API_KEY: ''
+  });
+  assert.strictEqual(res.statusCode, 200);
+  assert.strictEqual(res.body.llm, false);
+  assert.match(res.body.reply, /Aman Chat is designed to connect to a real server-side LLM API/);
+  assert(!/Le chat Aman est conçu/.test(res.body.reply));
+}
+
 (async () => {
   await testFallbackWithoutApiKey();
   await testOpenAiProviderUsesRealChatCompletion();
   await testProviderFailureFallsBackCleanly();
+  await testEnglishFallbackHonorsInterfaceLanguage();
   console.log('chat-api.test.js OK');
 })().catch(err => {
   console.error(err);

@@ -301,7 +301,7 @@
                 const res = await fetch(`${API_BASE}/api/chat`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text, history: chatHistory })
+                    body: JSON.stringify({ message: text, history: chatHistory, lang: document.documentElement.lang || 'fr' })
                 });
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 const data = await res.json();
@@ -317,7 +317,7 @@
             } catch (e) {
                 // Backend cloud HS / 404 / timeout → bascule sur le moteur de réponses local Aman
                 try {
-                    const r = await fetch('../api/chat', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ message: text, history: chatHistory }) });
+                    const r = await fetch('../api/chat', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ message: text, history: chatHistory, lang: document.documentElement.lang || 'fr' }) });
                     if (r.ok) {
                         const d = await r.json();
                         const reply = (d && d.reply) || localAmanReply(text);

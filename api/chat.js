@@ -26,6 +26,29 @@ const FALLBACK_MEMORY = {
   spectro: `Spectro est le module audio : analyse spectrale, mapping fréquence → émotion, génération d'ambiances, visualisation temps réel et pont vers Futur-Synth pour synchroniser son, image et monde.`,
   engine: `Le moteur réel actuel est Unity : WebGL intégré au site, ZIP Windows téléchargeable et APK Android. Unity sert à livrer vite. Unreal Engine doit servir à la vertical slice premium hyperréaliste : avatar Aman, ville futuriste, lumière Lumen/Nanite, ARRED cinématique.`,
   docs: `La Data Room publique contient 10 PDFs stratégiques intégrés et vérifiés : Reset, One Pager, Pitch Deck, MVP 30j, Roadmap, Subventions, Audit juridique, Contacts, Budget, Data Room Kit.`,
+  api: `Le chat Aman est conçu pour se connecter à une vraie API LLM côté serveur via XAI_API_KEY, OPENAI_API_KEY, OPENROUTER_API_KEY ou ANTHROPIC_API_KEY. Sans variable active en production, il bascule volontairement sur ce fallback local pour ne jamais casser l'expérience.`,
+  generic: `Aman OS est déjà une base réelle : site Vercel, Data Room, moteur Unity WebGL/Windows/APK et pages Futur-Synth/ARRED/Spectro. Ce qu'il faut professionnaliser maintenant : connecter l'API LLM en production, terminer l'i18n, renforcer le moteur v0.2 et lancer la vertical slice Unreal premium.`,
+};
+
+const FALLBACK_TRANSLATIONS = {
+  en: {
+    [FALLBACK_MEMORY.futur]: `Futur-Synth AI is the core product: a European infrastructure for embodied creative AI, with Aman as presence, Data Vault, permissions, audit log, audiovisual generation, creator cockpit and investor Data Room. Path: 30-day MVP → 90-day Alpha → Q4 2026 Production.`,
+    [FALLBACK_MEMORY.arred]: `ARRED is the founding project: emotional architecture + augmented reality. The idea is to design places that amplify a precise emotion through light, sound, geometry, materials, AR layers and spatial memory.`,
+    [FALLBACK_MEMORY.spectro]: `Spectro is the audio module: spectral analysis, frequency → emotion mapping, atmosphere generation, real-time visualization and a bridge to Futur-Synth to synchronize sound, image and world.`,
+    [FALLBACK_MEMORY.engine]: `The real current engine is Unity: WebGL embedded in the site, downloadable Windows ZIP and Android APK. Unity ships fast. Unreal Engine should become the premium hyper-realistic vertical slice: Aman avatar, futuristic city, Lumen/Nanite lighting, cinematic ARRED.`,
+    [FALLBACK_MEMORY.docs]: `The public Data Room contains 10 integrated and verified strategic PDFs: Reset, One Pager, Pitch Deck, 30-day MVP, Roadmap, Grants, Legal Audit, Contacts, Budget, Data Room Kit.`,
+    [FALLBACK_MEMORY.api]: `Aman Chat is designed to connect to a real server-side LLM API through XAI_API_KEY, OPENAI_API_KEY, OPENROUTER_API_KEY or ANTHROPIC_API_KEY. If no variable is active in production, it deliberately switches to this local fallback so the experience never breaks.`,
+    [FALLBACK_MEMORY.generic]: `Aman OS is already a real base: Vercel site, Data Room, Unity WebGL/Windows/APK engine and Futur-Synth/ARRED/Spectro pages. What must be professionalized now: connect the production LLM API, finish i18n, strengthen engine v0.2 and launch the premium Unreal vertical slice.`,
+  },
+  nl: {
+    [FALLBACK_MEMORY.futur]: `Futur-Synth AI is het kernproduct: een Europese infrastructuur voor belichaamde creatieve AI, met Aman als aanwezigheid, Data Vault, permissies, auditlog, audiovisuele generatie, creator-cockpit en investeerders-Data Room. Pad: MVP 30 dagen → Alpha 90 dagen → Productie Q4 2026.`,
+    [FALLBACK_MEMORY.arred]: `ARRED is het stichtende project: emotionele architectuur + augmented reality. Het idee is om plekken te ontwerpen die een precieze emotie versterken via licht, geluid, geometrie, materialen, AR-lagen en ruimtelijk geheugen.`,
+    [FALLBACK_MEMORY.spectro]: `Spectro is de audiomodule: spectrale analyse, frequentie → emotie mapping, sfeercreatie, realtime visualisatie en een brug naar Futur-Synth om geluid, beeld en wereld te synchroniseren.`,
+    [FALLBACK_MEMORY.engine]: `De echte huidige engine is Unity: WebGL in de site, downloadbare Windows-ZIP en Android-APK. Unity levert snel. Unreal Engine moet de premium hyperrealistische vertical slice worden: Aman-avatar, futuristische stad, Lumen/Nanite-licht, cinematografische ARRED.`,
+    [FALLBACK_MEMORY.docs]: `De publieke Data Room bevat 10 geïntegreerde en geverifieerde strategische pdf's: Reset, One Pager, Pitch Deck, MVP 30 dagen, Roadmap, Subsidies, Juridische Audit, Contacten, Budget, Data Room Kit.`,
+    [FALLBACK_MEMORY.api]: `Aman Chat is ontworpen om te verbinden met een echte server-side LLM API via XAI_API_KEY, OPENAI_API_KEY, OPENROUTER_API_KEY of ANTHROPIC_API_KEY. Als er in productie geen variabele actief is, schakelt het bewust over naar deze lokale fallback zodat de ervaring nooit breekt.`,
+    [FALLBACK_MEMORY.generic]: `Aman OS is al een echte basis: Vercel-site, Data Room, Unity WebGL/Windows/APK-engine en Futur-Synth/ARRED/Spectro-pagina's. Wat nu professioneel moet worden: de productie-LLM API verbinden, i18n afronden, engine v0.2 versterken en de premium Unreal vertical slice starten.`,
+  }
 };
 
 function getJsonBody(req) {
@@ -159,7 +182,7 @@ async function callProvider(provider, messages) {
   return callOpenAICompatible(provider, messages);
 }
 
-function fallbackReply(message = '') {
+function fallbackReply(message = '', lang = 'fr') {
   const m = String(message).toLowerCase();
   const parts = [];
   if (/unity|unreal|moteur|engine|webgl|apk|jeu|3d|build/.test(m)) parts.push(FALLBACK_MEMORY.engine);
@@ -168,12 +191,16 @@ function fallbackReply(message = '') {
   if (/spectro|son|audio|musique|fréquence|frequence|spectrum/.test(m)) parts.push(FALLBACK_MEMORY.spectro);
   if (/document|pdf|data room|download|télécharg|telecharg/.test(m)) parts.push(FALLBACK_MEMORY.docs);
   if (/api|chat|connect|llm|modèle|modele|intelligence/.test(m)) {
-    parts.push(`Le chat Aman est conçu pour se connecter à une vraie API LLM côté serveur via XAI_API_KEY, OPENAI_API_KEY, OPENROUTER_API_KEY ou ANTHROPIC_API_KEY. Sans variable active en production, il bascule volontairement sur ce fallback local pour ne jamais casser l'expérience.`);
+    parts.push(FALLBACK_MEMORY.api);
   }
   if (!parts.length) {
-    parts.push(`Aman OS est déjà une base réelle : site Vercel, Data Room, moteur Unity WebGL/Windows/APK et pages Futur-Synth/ARRED/Spectro. Ce qu'il faut professionnaliser maintenant : connecter l'API LLM en production, terminer l'i18n, renforcer le moteur v0.2 et lancer la vertical slice Unreal premium.`);
+    parts.push(FALLBACK_MEMORY.generic);
   }
-  return [...new Set(parts)].join('\n\n');
+  const fr = [...new Set(parts)].join('\n\n');
+  const normalizedLang = String(lang || 'fr').slice(0, 2).toLowerCase();
+  if (normalizedLang === 'fr') return fr;
+  const dict = FALLBACK_TRANSLATIONS[normalizedLang] || {};
+  return fr.split('\n\n').map(part => dict[part] || part).join('\n\n');
 }
 
 function sendCors(res) {
@@ -189,12 +216,13 @@ async function handler(req, res) {
 
   const body = getJsonBody(req);
   const message = cleanMessage(body.message || '');
+  const lang = cleanMessage(body.lang || 'fr', 8).slice(0, 2).toLowerCase() || 'fr';
   const history = cleanHistory(body.history || []);
   const provider = providerFromEnv(process.env);
 
   if (provider) {
     try {
-      const reply = await callProvider(provider, buildMessages(message, history));
+      const reply = await callProvider(provider, buildMessages(`${message}\n\n[Interface language: ${lang}]`, history));
       return res.status(200).json({
         reply,
         source: provider.name,
@@ -205,7 +233,7 @@ async function handler(req, res) {
       });
     } catch (error) {
       return res.status(200).json({
-        reply: fallbackReply(message),
+        reply: fallbackReply(message, lang),
         source: `fallback-after-${provider.name}`,
         llm: false,
         mode: 'api-fallback',
@@ -216,7 +244,7 @@ async function handler(req, res) {
   }
 
   return res.status(200).json({
-    reply: fallbackReply(message),
+    reply: fallbackReply(message, lang),
     source: 'fallback-local-aman',
     llm: false,
     mode: 'no-server-env-key',
