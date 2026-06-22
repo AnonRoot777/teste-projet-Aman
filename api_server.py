@@ -241,6 +241,21 @@ def call_llm(messages: List[Dict[str, str]]) -> str:
         except Exception as e:
             print(f"[warn] OpenAI call failed: {e}; fallback local")
 
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY")
+    if openrouter_key:
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=openrouter_key, base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"))
+            resp = client.chat.completions.create(
+                model=os.environ.get("OPENROUTER_MODEL", "openai/gpt-4o-mini"),
+                messages=messages,
+                temperature=0.7,
+                max_tokens=600,
+            )
+            return resp.choices[0].message.content.strip()
+        except Exception as e:
+            print(f"[warn] OpenRouter call failed: {e}; fallback local")
+
     # Fallback local
     last_user = next((m["content"] for m in reversed(messages) if m["role"] == "user"), "")
     return smart_local_reply(last_user, messages)
@@ -287,7 +302,7 @@ def health():
         "status": "ok",
         "service": "Aman OS API",
         "version": "9.0",
-        "llm_configured": bool(os.environ.get("OPENAI_API_KEY") or os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")),
+        "llm_configured": bool(os.environ.get("OPENAI_API_KEY") or os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY") or os.environ.get("OPENROUTER_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")),
         "memory_loaded": MEMORY_FILE.exists(),
         "timestamp": datetime.now().isoformat(),
     }
@@ -303,7 +318,7 @@ def chat(req: ChatRequest):
         {"role": "user", "content": req.message}
     ]
 
-    source = "openai" if os.environ.get("OPENAI_API_KEY") else "local"
+    source = "xai" if (os.environ.get("XAI_API_KEY") or os.environ.get("GROK_API_KEY")) else ("openai" if os.environ.get("OPENAI_API_KEY") else ("openrouter" if os.environ.get("OPENROUTER_API_KEY") else "local"))
     reply = call_llm(messages)
 
     # log

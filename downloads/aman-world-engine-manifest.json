@@ -9,5 +9,7 @@
     "webgl": "game/aman-world-engine/index.html",
     "android_apk": "downloads/AmanOS-Mobile-v0.1-release.apk"
   },
-  "backend": "http://127.0.0.1:8008/api/chat"
+  "backend": "https://teste-projet-aman.vercel.app/api/chat",
+  "health": "https://teste-projet-aman.vercel.app/api/health",
+  "api_mode": "serverless-llm-with-local-fallback"
 }

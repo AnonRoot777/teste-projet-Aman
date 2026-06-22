@@ -949,6 +949,142 @@ const AMAN_I18N = {
   }
 };
 
+// AMAN_I18N_EXTRA_V10
+Object.assign(AMAN_I18N.en, {
+  "FUTUR-SYNTH": "FUTUR-SYNTH",
+  "Spectro": "Spectro",
+  "— SYSTÈME ARRED —": "— ARRED SYSTEM —",
+  "Son": "Sound",
+  "B+": "B+",
+  "— SYNTHÈSE OPÉRATIONNELLE —": "— OPERATIONAL SYNTHESIS —",
+  "— UTILISATION INVESTISSEUR —": "— INVESTOR USE —",
+  "Comment s'en servir": "How to use it",
+  "— DOCUMENTS LIÉS —": "— RELATED DOCUMENTS —",
+  "06 Subventions & Incubateurs": "06 Grants & Incubators",
+  "08 Plan Contacts & Relances": "08 Contacts & Follow-up Plan",
+  "S0": "S0",
+  "S1": "S1",
+  "S2": "S2",
+  "S3": "S3",
+  "VÉRIFICATION API AMAN…": "CHECKING AMAN API…",
+  "Roadmap": "Roadmap",
+  "Plan Contacts & Relances • AMAN OS": "Contacts & Follow-up Plan • AMAN OS",
+  "📬 Plan Contacts & Relances": "📬 Contacts & Follow-up Plan",
+  "Transformer les PDFs en arsenal d'envoi : structure Drive, niveaux d'accès, pièces à fournir, scripts de message, checklists de due diligence et ordre de relance.": "Turn the PDFs into a sending arsenal: Drive structure, access levels, files to provide, message scripts, due-diligence checklists and follow-up order.",
+  "Objectif court terme : 20 contacts qualifiés, 8 réponses, 4 rendez-vous, 2 lettres d'intérêt.": "Short-term target: 20 qualified contacts, 8 replies, 4 meetings, 2 letters of interest.",
+  "— BUILD RÉEL UNITY —": "— REAL UNITY BUILD —",
+  "— JOUER DANS LE NAVIGATEUR —": "— PLAY IN THE BROWSER —",
+  "— MODULES —": "— MODULES —",
+  "— UNITY OU UNREAL ? —": "— UNITY OR UNREAL? —",
+  "— CONTRÔLES —": "— CONTROLS —",
+  "1 = Futur-Synth • 2 = ARRED • 3 = Spectro • 4 = Aman Core • C = ping API Aman production.": "1 = Futur-Synth • 2 = ARRED • 3 = Spectro • 4 = Aman Core • C = ping Aman production API.",
+  "— VISION ACTIONNABLE —": "— ACTIONABLE VISION —",
+  "Chaque carte ouvre un dossier issu des documents Google Drive : pitch, roadmap, budget, data room, audit juridique et financement. Ce n'est plus une vitrine : c'est un cockpit investisseur.": "Each card opens a dossier sourced from the Google Drive documents: pitch, roadmap, budget, data room, legal audit and funding. It is no longer a showcase: it is an investor cockpit.",
+  "PDF 03": "PDF 03",
+  "Infrastructure européenne d'IA incarnée, gouvernée et interopérable : OS d'assistants évolutifs, économie de créateurs et preuve physique à Bruxelles.": "European infrastructure for embodied, governed and interoperable AI: scalable assistant OS, creator economy and physical proof in Brussels.",
+  "PDF 05": "PDF 05",
+  "PDF 09": "PDF 09",
+  "PDF 11": "PDF 11",
+  "PDF 07": "PDF 07",
+  "PDF 06": "PDF 06",
+  "— ROADMAP CONSOLIDÉE —": "— CONSOLIDATED ROADMAP —",
+  "— COCKPIT PRODUIT —": "— PRODUCT COCKPIT —",
+  "30k→6,5M": "30k→6.5M",
+  "— DATA ROOM COMPLÈTE —": "— COMPLETE DATA ROOM —",
+  "Futur Synth AI transforme l'IA de simple outil en présence logicielle continue : identité, mémoire contrôlée, permissions, audit et incarnation premium.": "Futur Synth AI turns AI from a simple tool into a continuous software presence: identity, controlled memory, permissions, audit and premium embodiment.",
+  "Démonstrateur narratif et produit : Aman guide l'utilisateur, crée un assistant, active une mémoire contrôlée, exécute trois capacités utiles et produit un audit log lisible.": "Narrative and product demonstrator: Aman guides the user, creates an assistant, activates controlled memory, performs three useful capabilities and produces a readable audit log.",
+  "— ORDRE D'ENVOI —": "— SENDING ORDER —",
+  "On n'envoie jamais un roman cosmique à quelqu'un qui a seulement besoin d'un feu vert. La Data Room dose la preuve : assez pour ouvrir la porte, pas assez pour noyer le décideur.": "Never send a cosmic novel to someone who only needs a green light. The Data Room calibrates the proof: enough to open the door, not enough to drown the decision-maker.",
+  "— GOOGLE DRIVE / CHATGPT EXPORT —": "— GOOGLE DRIVE / CHATGPT EXPORT —",
+  "— ASSETS VISUELS —": "— VISUAL ASSETS —",
+  "Je n’ai pas injecté des centaines de fichiers lourds dans Vercel : j’ai intégré un atlas propre, léger, cliquable. Étape suivante : sélectionner les visuels définitifs et les convertir en textures/skyboxes/portails Unity ou Unreal.": "I did not inject hundreds of heavy files into Vercel: I integrated a clean, lightweight, clickable atlas. Next step: select the final visuals and convert them into Unity or Unreal textures, skyboxes and portals.",
+  "— DÉCISION TECHNIQUE —": "— TECHNICAL DECISION —",
+  "Livrables": "Deliverables",
+  "Un investisseur doit comprendre le problème, voir la démo et savoir ce qu'il finance en 7 minutes.": "An investor must understand the problem, see the demo and know what they are financing in 7 minutes.",
+  "Objectif : construire le minimum qui rend l'ensemble impossible à balayer.": "Objective: build the minimum that makes the whole project impossible to dismiss.",
+  "Solution : un OS d'assistants incarnés avec Data Vault, permissions et marketplace.": "Solution: an OS of embodied assistants with Data Vault, permissions and marketplace.",
+  "Bruxelles": "Brussels",
+  "Futur Synth AI transforme l'assistant en entité gouvernée : identité, mémoire, permissions, audit, incarnation, économie.": "Futur Synth AI turns the assistant into a governed entity: identity, memory, permissions, audit, embodiment and economy.",
+  "MVP 30j": "30-day MVP",
+  "Le projet n'est pas annulé : il change de base opérationnelle.": "The project is not cancelled: it is changing operational base.",
+  "J61-J90/J91-J180 : cas d'usage, KPI, sécurité v1, creators, partenaires, investor pack.": "D61-D90/D91-D180: use cases, KPIs, security v1, creators, partners, investor pack.",
+  "— PIPELINE SPECTRO —": "— SPECTRO PIPELINE —",
+  "Subventions & Incubateurs • AMAN OS": "Grants & Incubators • AMAN OS",
+  "Intermultiverse OS • v10.0 • API + Engine Live": "Intermultiverse OS • v10.0 • API + Engine Live",
+  "API PRÊTE • VARIABLE LLM NON ACTIVE EN PRODUCTION • FALLBACK LOCAL": "API READY • LLM VARIABLE NOT ACTIVE IN PRODUCTION • LOCAL FALLBACK",
+  "API HEALTH INDISPONIBLE • FALLBACK LOCAL ACTIF": "API HEALTH UNAVAILABLE • LOCAL FALLBACK ACTIVE"
+});
+Object.assign(AMAN_I18N.nl, {
+  "FUTUR-SYNTH": "FUTUR-SYNTH",
+  "Spectro": "Spectro",
+  "— VISION —": "— VISIE —",
+  "— DATA ROOM —": "— DATA ROOM —",
+  "— APPLICATIONS —": "— TOEPASSINGEN —",
+  "— SYSTÈME ARRED —": "— ARRED-SYSTEEM —",
+  "Son": "Geluid",
+  "B+": "B+",
+  "— SYNTHÈSE OPÉRATIONNELLE —": "— OPERATIONELE SYNTHESE —",
+  "— UTILISATION INVESTISSEUR —": "— INVESTEERDERSGEBRUIK —",
+  "Comment s'en servir": "Hoe te gebruiken",
+  "— DOCUMENTS LIÉS —": "— GERELATEERDE DOCUMENTEN —",
+  "06 Subventions & Incubateurs": "06 Subsidies & Incubators",
+  "08 Plan Contacts & Relances": "08 Contacten & Opvolging",
+  "S0": "S0",
+  "S1": "S1",
+  "S2": "S2",
+  "S3": "S3",
+  "VÉRIFICATION API AMAN…": "AMAN API CONTROLEREN…",
+  "Roadmap": "Roadmap",
+  "Plan Contacts & Relances • AMAN OS": "Contacten & Opvolgplan • AMAN OS",
+  "📬 Plan Contacts & Relances": "📬 Contacten & Opvolgplan",
+  "Transformer les PDFs en arsenal d'envoi : structure Drive, niveaux d'accès, pièces à fournir, scripts de message, checklists de due diligence et ordre de relance.": "Verander de pdf's in een verzendarsenaal: Drive-structuur, toegangsniveaus, aan te leveren stukken, berichtscripts, due-diligence-checklists en opvolgvolgorde.",
+  "Objectif court terme : 20 contacts qualifiés, 8 réponses, 4 rendez-vous, 2 lettres d'intérêt.": "Kortetermijndoel: 20 gekwalificeerde contacten, 8 antwoorden, 4 afspraken, 2 intentieverklaringen.",
+  "— BUILD RÉEL UNITY —": "— ECHTE UNITY-BUILD —",
+  "— JOUER DANS LE NAVIGATEUR —": "— SPELEN IN DE BROWSER —",
+  "— MODULES —": "— MODULES —",
+  "— UNITY OU UNREAL ? —": "— UNITY OF UNREAL? —",
+  "— CONTRÔLES —": "— BEDIENING —",
+  "1 = Futur-Synth • 2 = ARRED • 3 = Spectro • 4 = Aman Core • C = ping API Aman production.": "1 = Futur-Synth • 2 = ARRED • 3 = Spectro • 4 = Aman Core • C = ping Aman productie-API.",
+  "— VISION ACTIONNABLE —": "— ACTIEGERICHTE VISIE —",
+  "Chaque carte ouvre un dossier issu des documents Google Drive : pitch, roadmap, budget, data room, audit juridique et financement. Ce n'est plus une vitrine : c'est un cockpit investisseur.": "Elke kaart opent een dossier uit de Google Drive-documenten: pitch, roadmap, budget, data room, juridische audit en financiering. Het is geen etalage meer: het is een investeerderscockpit.",
+  "PDF 03": "PDF 03",
+  "Infrastructure européenne d'IA incarnée, gouvernée et interopérable : OS d'assistants évolutifs, économie de créateurs et preuve physique à Bruxelles.": "Europese infrastructuur voor belichaamde, bestuurde en interoperabele AI: schaalbaar assistenten-OS, makerseconomie en fysiek bewijs in Brussel.",
+  "PDF 05": "PDF 05",
+  "PDF 09": "PDF 09",
+  "PDF 11": "PDF 11",
+  "PDF 07": "PDF 07",
+  "PDF 06": "PDF 06",
+  "— ROADMAP CONSOLIDÉE —": "— GECONSOLIDEERDE ROADMAP —",
+  "— COCKPIT PRODUIT —": "— PRODUCTCOCKPIT —",
+  "30k→6,5M": "30k→6,5M",
+  "— DATA ROOM COMPLÈTE —": "— VOLLEDIGE DATA ROOM —",
+  "Futur Synth AI transforme l'IA de simple outil en présence logicielle continue : identité, mémoire contrôlée, permissions, audit et incarnation premium.": "Futur Synth AI maakt van AI geen eenvoudig hulpmiddel maar een continue software-aanwezigheid: identiteit, gecontroleerd geheugen, permissies, audit en premium belichaming.",
+  "Démonstrateur narratif et produit : Aman guide l'utilisateur, crée un assistant, active une mémoire contrôlée, exécute trois capacités utiles et produit un audit log lisible.": "Narratieve productdemo: Aman begeleidt de gebruiker, creëert een assistent, activeert gecontroleerd geheugen, voert drie nuttige capaciteiten uit en produceert een leesbaar auditlog.",
+  "— ORDRE D'ENVOI —": "— VERZENDVOLGORDE —",
+  "On n'envoie jamais un roman cosmique à quelqu'un qui a seulement besoin d'un feu vert. La Data Room dose la preuve : assez pour ouvrir la porte, pas assez pour noyer le décideur.": "Stuur nooit een kosmische roman naar iemand die alleen groen licht nodig heeft. De Data Room doseert het bewijs: genoeg om de deur te openen, niet genoeg om de beslisser te overspoelen.",
+  "— GOOGLE DRIVE / CHATGPT EXPORT —": "— GOOGLE DRIVE / CHATGPT EXPORT —",
+  "— ASSETS VISUELS —": "— VISUELE ASSETS —",
+  "Je n’ai pas injecté des centaines de fichiers lourds dans Vercel : j’ai intégré un atlas propre, léger, cliquable. Étape suivante : sélectionner les visuels définitifs et les convertir en textures/skyboxes/portails Unity ou Unreal.": "Ik heb geen honderden zware bestanden in Vercel gestopt: ik heb een schone, lichte, klikbare atlas geïntegreerd. Volgende stap: de definitieve visuals selecteren en omzetten naar Unity- of Unreal-texturen, skyboxes en portalen.",
+  "— DÉCISION TECHNIQUE —": "— TECHNISCHE BESLISSING —",
+  "Livrables": "Leveringen",
+  "Un investisseur doit comprendre le problème, voir la démo et savoir ce qu'il finance en 7 minutes.": "Een investeerder moet in 7 minuten het probleem begrijpen, de demo zien en weten wat hij financiert.",
+  "Objectif : construire le minimum qui rend l'ensemble impossible à balayer.": "Doel: bouw het minimum waardoor het geheel onmogelijk te negeren is.",
+  "Solution : un OS d'assistants incarnés avec Data Vault, permissions et marketplace.": "Oplossing: een OS van belichaamde assistenten met Data Vault, permissies en marketplace.",
+  "Bruxelles": "Brussel",
+  "Futur Synth AI transforme l'assistant en entité gouvernée : identité, mémoire, permissions, audit, incarnation, économie.": "Futur Synth AI maakt van de assistent een bestuurde entiteit: identiteit, geheugen, permissies, audit, belichaming en economie.",
+  "MVP 30j": "MVP 30 dagen",
+  "Le projet n'est pas annulé : il change de base opérationnelle.": "Het project is niet geannuleerd: het krijgt een nieuwe operationele basis.",
+  "J61-J90/J91-J180 : cas d'usage, KPI, sécurité v1, creators, partenaires, investor pack.": "D61-D90/D91-D180: use cases, KPI's, security v1, creators, partners, investeerderspakket.",
+  "— CAPACITÉS —": "— CAPACITEITEN —",
+  "— INTÉGRATION —": "— INTEGRATIE —",
+  "Spectro + Futur-Synth.": "Spectro + Futur-Synth.",
+  "— PIPELINE SPECTRO —": "— SPECTRO-PIPELINE —",
+  "Subventions & Incubateurs • AMAN OS": "Subsidies & Incubators • AMAN OS",
+  "Intermultiverse OS • v10.0 • API + Engine Live": "Intermultiverse OS • v10.0 • API + Engine Live",
+  "API PRÊTE • VARIABLE LLM NON ACTIVE EN PRODUCTION • FALLBACK LOCAL": "API KLAAR • LLM-VARIABELE NIET ACTIEF IN PRODUCTIE • LOKALE FALLBACK",
+  "API HEALTH INDISPONIBLE • FALLBACK LOCAL ACTIF": "API HEALTH NIET BESCHIKBAAR • LOKALE FALLBACK ACTIEF"
+});
+
 function normalizeText(text) {
   return text.replace(/\s+/g, ' ').trim();
 }
@@ -977,13 +1113,23 @@ function collectTextNodes(root = document.body) {
 }
 
 function initI18nNodes() {
-  window.__amanI18nNodes = collectTextNodes().map(node => ({ node, original: node.nodeValue }));
-  window.__amanI18nInputs = Array.from(document.querySelectorAll('input[placeholder], textarea[placeholder]'))
+  const previousNodes = window.__amanI18nNodes || [];
+  const seenNodes = new WeakSet(previousNodes.map(item => item.node).filter(Boolean));
+  const newNodes = collectTextNodes()
+    .filter(node => !seenNodes.has(node))
+    .map(node => ({ node, original: node.nodeValue }));
+  window.__amanI18nNodes = previousNodes.concat(newNodes);
+
+  const previousInputs = window.__amanI18nInputs || [];
+  const seenInputs = new WeakSet(previousInputs.map(item => item.el).filter(Boolean));
+  const newInputs = Array.from(document.querySelectorAll('input[placeholder], textarea[placeholder]'))
+    .filter(el => !seenInputs.has(el))
     .map(el => ({ el, original: el.getAttribute('placeholder') || '' }));
+  window.__amanI18nInputs = previousInputs.concat(newInputs);
 }
 
 function applyLanguage(lang) {
-  if (!window.__amanI18nNodes) initI18nNodes();
+  initI18nNodes();
   document.documentElement.lang = lang;
   localStorage.setItem('aman_lang', lang);
 
