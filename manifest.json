@@ -1,0 +1,24 @@
+{
+  "name": "AMAN • Intermultiverse OS",
+  "short_name": "AMAN OS",
+  "description": "Le système vivant qui relie tous tes mondes. Data Room investor-grade, API réelle, gouvernance Linear. Bruxelles 2026.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#00F5FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/hero.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "business", "entertainment"],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}
