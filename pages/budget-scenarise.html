@@ -74,3 +74,78 @@
 
 </body>
 </html>
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-tag">— SIMULATEUR INTERACTIF —</div>
+    <h2 class="section-title">Budget Calculator</h2>
+    <p class="section-sub">Teste les scénarios en temps réel. Choisis ton investissement et vois l'impact sur le runway et les livrables.</p>
+  </div>
+  
+  <div style="max-width: 600px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); padding: 40px; border-radius: 8px;">
+    <div style="margin-bottom: 30px;">
+      <label style="display: block; margin-bottom: 10px; color: var(--text-dim); font-size: 14px;">INVESTISSEMENT (€)</label>
+      <input type="range" id="investSlider" min="30000" max="6500000" step="10000" value="150000" style="width: 100%;" oninput="updateBudgetCalc()">
+      <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dim);">
+        <span>30k</span>
+        <span id="investValue">150 000 €</span>
+        <span>6.5M</span>
+      </div>
+    </div>
+    
+    <div id="budgetResults" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="background: #111; padding: 20px; border-radius: 6px;">
+        <div style="font-size: 12px; color: var(--text-dim);">RUNWAY ESTIMÉ</div>
+        <div id="runwayValue" style="font-size: 28px; font-weight: 700; color: var(--accent);">18 mois</div>
+        <div style="font-size: 13px; color: var(--text-dim);">à burn rate moyen</div>
+      </div>
+      <div style="background: #111; padding: 20px; border-radius: 6px;">
+        <div style="font-size: 12px; color: var(--text-dim);">PALIER ATTEINT</div>
+        <div id="palierValue" style="font-size: 28px; font-weight: 700; color: var(--accent2);">S1</div>
+        <div style="font-size: 13px; color: var(--text-dim);">Alpha finançable</div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 30px; font-size: 13px; color: var(--text-dim);">
+      <strong>Allocation suggérée :</strong> 40% Tech &amp; Produit • 25% Équipe • 20% Marketing &amp; Sales • 15% Ops &amp; Legal
+    </div>
+  </div>
+</section>
+
+<script>
+function updateBudgetCalc() {
+  const slider = document.getElementById('investSlider');
+  const valueEl = document.getElementById('investValue');
+  const runwayEl = document.getElementById('runwayValue');
+  const palierEl = document.getElementById('palierValue');
+  
+  const invest = parseInt(slider.value);
+  valueEl.textContent = invest.toLocaleString('fr-FR') + ' €';
+  
+  let runway, palier;
+  if (invest < 50000) {
+    runway = Math.round(invest / 2500) + ' mois';
+    palier = 'S0';
+  } else if (invest < 200000) {
+    runway = Math.round(invest / 8500) + ' mois';
+    palier = 'S1';
+  } else if (invest < 800000) {
+    runway = Math.round(invest / 28000) + ' mois';
+    palier = 'S2';
+  } else {
+    runway = Math.round(invest / 120000) + ' mois';
+    palier = 'S3';
+  }
+  
+  runwayEl.textContent = runway;
+  palierEl.textContent = palier;
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('investSlider');
+  if (slider) {
+    updateBudgetCalc();
+  }
+});
+</script>
