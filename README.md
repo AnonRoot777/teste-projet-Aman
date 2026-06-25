@@ -1,4 +1,4 @@
-# AMAN • INTERMULTIVERSE OS v11.0
+# AMAN • INTERMULTIVERSE OS v12.0
 
 > Le système vivant qui relie tous tes mondes.
 
@@ -72,7 +72,7 @@ Projet Linear dédié : **Aman-OS • Intermultiverse Platform**
 - URL : https://linear.app/aman-os/project/aman-os-intermultiverse-platform-0f98d3fc2a43
 - Team : Aman-os (AMA)
 - Backlog structuré avec milestones, labels (Feature, Improvement, Bug), estimates.
-- Issues prioritaires (v11.0) :
+- Issues prioritaires (v12.0) :
   - Mobile APK & PWA Experience
   - Voice & TTS Integration
   - Interactive Investor Dashboard (budget calculator, Gantt, search)
@@ -122,5 +122,5 @@ Page **Chat** : Connexion directe via api_server.py (réel LLM ou stub intellige
 
 ---
 
-**v11.0 — Professional Linear-backed governance + interactive foundation + PWA/mobile readiness.**  
+**v12.0 — Professional Linear-backed governance + interactive foundation + PWA/mobile readiness.**  
 Costume Armani sur la magie. Evidence first. No hype. Ready for serious capital.
