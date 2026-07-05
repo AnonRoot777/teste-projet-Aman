@@ -1,4 +1,4 @@
-# AMAN • INTERMULTIVERSE OS v12.0
+# AMAN • INTERMULTIVERSE OS v13.0
 
 > Le système vivant qui relie tous tes mondes.
 
@@ -24,7 +24,7 @@ aman-os-deploy/
 │   ├── roadmap-production.html
 │   ├── budget-scenarise.html
 │   ├── ... (tous les documents audités)
-│   └── engine.html         # World Engine (Unity WebGL)
+│   └── engine.html         # Dual Engine v13 (Unity WebGL embed + Unreal MCP premium)
 ├── api_server.py           # FastAPI backend (chat, memory, agents, health)
 ├── assets/i18n.js          # Multilingue FR/EN/NL (extensible)
 ├── game/                   # Aman World Engine (WebGL build)
@@ -45,7 +45,7 @@ Architecture émotionnelle et réalité augmentée. Le projet fondateur.
 Analyse spectrale, génération musicale, cartographie émotionnelle du son. Intégré nativement.
 
 ### Reactor / World Engine
-Moteur de génération d'images et mondes visuels (Unity WebGL live + Unreal MCP).
+Moteur de génération d'images et mondes visuels (Dual Engine: Unity WebGL (web/APK fast) + Unreal Engine 5.x MCP (premium MontSecret Intermultiverse)).
 
 ## 🔗 Investor Access — Data Room Professionnelle
 
@@ -72,7 +72,7 @@ Projet Linear dédié : **Aman-OS • Intermultiverse Platform**
 - URL : https://linear.app/aman-os/project/aman-os-intermultiverse-platform-0f98d3fc2a43
 - Team : Aman-os (AMA)
 - Backlog structuré avec milestones, labels (Feature, Improvement, Bug), estimates.
-- Issues prioritaires (v12.0) :
+- Issues prioritaires (v13.0) :
   - Mobile APK & PWA Experience
   - Voice & TTS Integration
   - Interactive Investor Dashboard (budget calculator, Gantt, search)
@@ -122,5 +122,5 @@ Page **Chat** : Connexion directe via api_server.py (réel LLM ou stub intellige
 
 ---
 
-**v12.0 — Professional Linear-backed governance + interactive foundation + PWA/mobile readiness.**  
+**v13.0 — Professional Linear-backed governance + interactive foundation + PWA/mobile readiness.**  
 Costume Armani sur la magie. Evidence first. No hype. Ready for serious capital.
